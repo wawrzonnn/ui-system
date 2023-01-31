@@ -1,0 +1,16 @@
+.buttons {
+	width: 103px;
+	height: 40px;
+	border: 1px solid #000000;
+	padding: 10px;
+}
+
+.primary {
+    color: whitesmoke;
+    background-color: black;
+  
+}
+.secondary {
+    color: black;
+    background-color: whitesmoke;
+}
