@@ -30,25 +30,41 @@
 	color: #ffffff;
 }
 
-.disabledPrimary {
+.disabledPrimary, .disabledPrimary:hover {
 	background: #e6e1e5;
 	color: #1c1b1f;
 	opacity: 0.38;
+	box-shadow: none;
 }
 
-.disabledSecondary {
+.disabledSecondary, .disabledSecondary:hover {
 	background: #ffffff;
 	border-radius: 0px 0px 6px 6px;
 	opacity: 0.38;
 	color: #1c1b1f;
+	box-shadow: none;
 }
 
-.loadingPrimary {
+.loadingPrimary, .loadingPrimary:hover {
 	background: #FF90E8;
 	color: #FFFFFF;
+	box-shadow: none;
 }
 
-.loadingSecondary {
+.loadingSecondary, .loadingSecondary:hover {
 	background: #90A8ED;
 	color: #FFFFFF;
+	box-shadow: none;
 }
+
+.onClickClass {
+	background-color: #000000;
+}
+
+.backgroundPrimary {
+	background-color: red;
+  }
+  
+  .backgroundSecondary {
+	background-color: blue;
+  }

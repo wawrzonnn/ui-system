@@ -35,6 +35,6 @@ export const Disabled: Story = (args) => (
 		Disabled
 	</Button>
 )
- // Skoro wszystkie buttony na storybooku mozemy ustawic/sprawdzic za pomoca propsów to z jakiego powodu definiujemy buttony typu Loading lub Disabled ? 
+ // Skoro wszystkie buttony na storybooku mozemy ustawic za pomoca propsów to z jakiego powodu definiujemy buttony typu Loading lub Disabled ? 
 
 

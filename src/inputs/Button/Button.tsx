@@ -3,6 +3,7 @@ import { PropsWithChildren } from 'react'
 import { h } from 'preact'
 import styles from './Button.module.css'
 import ButtonStories, { Primary } from './Button.stories'
+// import { ikona } from '../../assets/color.svg'
 
 interface ButtonProps {
 	type?: 'button' | 'submit'
@@ -30,6 +31,8 @@ const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
 	const allClasses = [globalButton, variantClass, disabledClass, loadingClass].join(' ')
 	return (
 		<button className={allClasses} type={type} disabled={disabled} onClick={onClick}>
+			{/* { isLoading && {test} } */}
+			{/* { disabled && {test} } */}
 			{children}
 		</button>
 	)
