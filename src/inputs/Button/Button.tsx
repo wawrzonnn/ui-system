@@ -3,7 +3,8 @@ import { PropsWithChildren } from 'react'
 import { h } from 'preact'
 import styles from './Button.module.css'
 import ButtonStories, { Primary } from './Button.stories'
-// import { ikona } from '../../assets/color.svg'
+import { Loading } from '../../assets/Icons/Loading'
+import { Plus } from '../../assets/Icons/Plus'
 
 interface ButtonProps {
 	type?: 'button' | 'submit'
@@ -11,10 +12,13 @@ interface ButtonProps {
 	icon?: React.ReactElement
 	isLoading?: boolean
 	onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
+	// onMouseUP: (event: React.MouseEvent<HTMLButtonElement>) => void
+	// onMouseLeave: (event: React.MouseEvent<HTMLButtonElement>) => void
 	variant: 'primary' | 'secondary'
+	icons: 'show' | 'hide'
 }
 
-const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
+const Button: React.FC<ButtonProps> = ({
 	type = 'button',
 	disabled = false,
 	icon,
@@ -22,6 +26,7 @@ const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
 	onClick,
 	variant = 'primary',
 	children,
+	showIcons,
 }) => {
 	const globalButton = styles.buttons
 	const variantClass = variant === 'primary' ? styles.primary : styles.secondary
@@ -30,9 +35,15 @@ const Button: React.FC<PropsWithChildren<ButtonProps>> = ({
 
 	const allClasses = [globalButton, variantClass, disabledClass, loadingClass].join(' ')
 	return (
-		<button className={allClasses} type={type} disabled={disabled} onClick={onClick}>
-			{/* { isLoading && {test} } */}
-			{/* { disabled && {test} } */}
+		<button
+			className={allClasses}
+			type={type}
+			disabled={disabled}
+			onClick={onClick}
+			// onMouseUp={OnMouseUp}
+			// onMouseLeave={onMouseLeave}
+			>
+			{showIcons === 'show' ? isLoading ? <Loading className={allClasses} /> : <Plus className={allClasses} /> : null}
 			{children}
 		</button>
 	)

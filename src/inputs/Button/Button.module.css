@@ -4,6 +4,9 @@
 	padding: 10px 24px;
 	font-size: 14px;
 	line-height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .primary {
@@ -30,14 +33,16 @@
 	color: #ffffff;
 }
 
-.disabledPrimary, .disabledPrimary:hover {
+.disabledPrimary,
+.disabledPrimary:hover {
 	background: #e6e1e5;
 	color: #1c1b1f;
 	opacity: 0.38;
 	box-shadow: none;
 }
 
-.disabledSecondary, .disabledSecondary:hover {
+.disabledSecondary,
+.disabledSecondary:hover {
 	background: #ffffff;
 	border-radius: 0px 0px 6px 6px;
 	opacity: 0.38;
@@ -45,15 +50,17 @@
 	box-shadow: none;
 }
 
-.loadingPrimary, .loadingPrimary:hover {
-	background: #FF90E8;
-	color: #FFFFFF;
+.loadingPrimary,
+.loadingPrimary:hover {
+	background: #ff90e8;
+	color: #ffffff;
 	box-shadow: none;
 }
 
-.loadingSecondary, .loadingSecondary:hover {
-	background: #90A8ED;
-	color: #FFFFFF;
+.loadingSecondary,
+.loadingSecondary:hover {
+	background: #90a8ed;
+	color: #ffffff;
 	box-shadow: none;
 }
 
@@ -63,8 +70,16 @@
 
 .backgroundPrimary {
 	background-color: red;
-  }
-  
-  .backgroundSecondary {
+}
+
+.backgroundSecondary {
 	background-color: blue;
-  }
+}
+
+.MouseUp {
+	border-width: 3px 1px 1px 3px;
+	border-style: solid;
+	border-color: #000000;
+	background: #b23386;
+	color: #ffffff;
+}
