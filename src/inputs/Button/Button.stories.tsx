@@ -1,8 +1,10 @@
 import { Meta, Story } from '@storybook/preact'
 import Button from './Button'
-import * as React from 'preact/compat'
 import { h } from 'preact'
 import styles from './Button.module.css'
+import { Loading } from '../../assets/Icons/Loading'
+import { Plus } from '../../assets/Icons/Plus'
+import { Fragment } from 'react'
 
 export default {
 	component: Button,
@@ -11,26 +13,54 @@ export default {
 			options: ['primary', 'secondary'],
 			control: { type: 'radio' },
 		},
-		showIcons: {
-			options: ['show', 'hide'],
-			control: { type: 'radio' },
-		},
 	},
 } as Meta
 
 export const Primary: Story = args => (
-	<Button
-		{...args}
-		onClick={() => console.log('clicked')}
-		// onMouseUp={e => e.currentTarget.classList.add(styles.mouseUp)}
-		// onMouseLeave={e => e.currentTarget.classList.remove(styles.MouseUp)}
-		>
-		Primary
+	<Button {...args} onClick={() => console.log('clicked')}>
+		{args.isLoading
+			? 'Loading'
+			: args.variant === 'primary'
+			? 'Primary'
+			: args.variant === 'secondary'
+			? 'Secondary'
+			: args.disabled
+			? 'Disabled'
+			: ''}
 	</Button>
 )
 Primary.args = {
 	variant: 'primary',
 	disabled: false,
 	isLoading: false,
-	icons: 'show',
+}
+
+export const withIcon: Story = args => {
+	return (
+		<Button {...args}>
+			{args.isLoading && !args.disabled ? (
+				<Fragment>
+					<Loading className={styles.icons} />
+					Loading...
+				</Fragment>
+			) : (
+				<Fragment>
+					<Plus className={styles.icons} />
+					{args.variant === 'primary'
+						? 'Primary'
+						: args.variant === 'secondary'
+						? 'Secondary'
+						: args.disabled
+						? 'Disabled'
+						: ''}
+				</Fragment>
+			)}
+		</Button>
+	)
+}
+
+withIcon.args = {
+	variant: 'primary',
+	disabled: false,
+	isLoading: false,
 }

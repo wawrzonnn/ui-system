@@ -64,22 +64,7 @@
 	box-shadow: none;
 }
 
-.onClickClass {
-	background-color: #000000;
-}
-
-.backgroundPrimary {
-	background-color: red;
-}
-
-.backgroundSecondary {
-	background-color: blue;
-}
-
-.MouseUp {
-	border-width: 3px 1px 1px 3px;
-	border-style: solid;
-	border-color: #000000;
-	background: #b23386;
-	color: #ffffff;
+.icons {
+	margin-right: 60px;
+	padding: 600px;
 }
