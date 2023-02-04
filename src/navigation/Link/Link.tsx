@@ -24,7 +24,7 @@ const Link: React.FC<LinkProps> = ({
 	const optionClass = disabled === false ? styles.linkEnabled : styles.linkDisabled
 	const allClasses = [globalLinkClass, optionClass].join(' ')
 	return (
-		<a className={allClasses} id={id} target={target} disabled={disabled} onClick={onClick}>
+		<a className={allClasses} href={to} id={id} target={target} disabled={disabled} onClick={onClick}>
 			{children}
 		</a>
 	)
