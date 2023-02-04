@@ -25,9 +25,10 @@ interface CheckboxProps {
 
 
     return (
+     
       <input 
         type="checkbox"
-        className={styles.checked}
+        className={styles.checkbox}
         id={id}
         name={name}
         value={value}
@@ -35,7 +36,7 @@ interface CheckboxProps {
         checked={checked}
         disabled={disabled}
         onChange={onChange}
-      />
+      ></input>
     );
   };
   

@@ -1,4 +1,5 @@
-.checked {
-	background: #b23386;
+.checkbox:checked {
 	border-radius: 2px;
+	accent-color: #b23386;
 }
+
