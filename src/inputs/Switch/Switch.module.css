@@ -52,3 +52,8 @@ input:checked + .slider:before {
 .disabled {
     opacity: 0.28;
 }
+
+.test {
+	color: red;
+	font-size: 100px;
+}

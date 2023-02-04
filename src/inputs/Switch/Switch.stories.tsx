@@ -2,7 +2,7 @@ import React from 'react'
 import Switch from './Switch'
 import { Meta, Story } from '@storybook/preact'
 import { h } from 'preact'
-import { useState } from 'preact/hooks'
+import styles from './Switch.module.css'
 
 export default {
 	title: 'Switch',
