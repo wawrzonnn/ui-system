@@ -1200,6 +1200,25 @@
   resolved "http://139.59.154.199:4873/@discoveryjs%2fjson-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
+"@fortawesome/fontawesome-common-types@6.2.1":
+  version "6.2.1"
+  resolved "http://139.59.154.199:4873/@fortawesome%2ffontawesome-common-types/-/fontawesome-common-types-6.2.1.tgz#411e02a820744d3f7e0d8d9df9d82b471beaa073"
+  integrity sha512-Sz07mnQrTekFWLz5BMjOzHl/+NooTdW8F8kDQxjWwbpOJcnoSg4vUDng8d/WR1wOxM0O+CY9Zw0nR054riNYtQ==
+
+"@fortawesome/fontawesome-svg-core@^6.2.1":
+  version "6.2.1"
+  resolved "http://139.59.154.199:4873/@fortawesome%2ffontawesome-svg-core/-/fontawesome-svg-core-6.2.1.tgz#e87e905e444b5e7b715af09b64d27b53d4c8f9d9"
+  integrity sha512-HELwwbCz6C1XEcjzyT1Jugmz2NNklMrSPjZOWMlc+ZsHIVk+XOvOXLGGQtFBwSyqfJDNgRq4xBCwWOaZ/d9DEA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.2.1"
+
+"@fortawesome/free-solid-svg-icons@^6.2.1":
+  version "6.2.1"
+  resolved "http://139.59.154.199:4873/@fortawesome%2ffree-solid-svg-icons/-/free-solid-svg-icons-6.2.1.tgz#2290ea5adcf1537cbd0c43de6feb38af02141d27"
+  integrity sha512-oKuqrP5jbfEPJWTij4sM+/RvgX+RMFwx3QZCZcK9PrBDgxC35zuc7AOFsyMjMd/PIFPeB2JxyqDr5zs/DZFPPw==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.2.1"
+
 "@gar/promisify@^1.0.1":
   version "1.1.3"
   resolved "http://139.59.154.199:4873/@gar%2fpromisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
@@ -1727,7 +1746,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-controls@6.5.16":
+"@storybook/addon-controls@6.5.16", "@storybook/addon-controls@^6.5.16":
   version "6.5.16"
   resolved "http://139.59.154.199:4873/@storybook%2faddon-controls/-/addon-controls-6.5.16.tgz#5017805b8ca413edf6e9d87b90a9436e79eb5e59"
   integrity sha512-kShSGjq1MjmmyL3l8i+uPz6yddtf82mzys0l82VKtcuyjrr5944wYFJ5NTXMfZxrO/U6FeFsfuFZE/k6ex3EMg==
@@ -12701,6 +12720,11 @@ store2@^2.12.0:
   version "2.14.2"
   resolved "http://139.59.154.199:4873/store2/-/store2-2.14.2.tgz#56138d200f9fe5f582ad63bc2704dbc0e4a45068"
   integrity sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==
+
+storybook-css-modules@^1.0.8:
+  version "1.0.8"
+  resolved "http://139.59.154.199:4873/storybook-css-modules/-/storybook-css-modules-1.0.8.tgz#19392c07a31849dbcd2753ae6331e7f8c0f2ec69"
+  integrity sha512-anITwllH6nLw0quPElVBLRrE8QDbcRv0Dgl8sKLOc4uiqw+g1GE2l21Stjx3Wyv2O6ZKJScbyOpOuuz3SmeaOQ==
 
 stream-browserify@^2.0.1:
   version "2.0.2"
