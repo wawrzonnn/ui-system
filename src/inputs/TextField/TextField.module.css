@@ -1,0 +1,92 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+	font-family: 'Inter';
+	font-weight: 400;
+}
+
+.input {
+	min-width: 39px;
+	height: 24px;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #484649;
+	border-radius: 5px;
+	outline: none;
+	transition: border-color 0.2s;
+	position: relative;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.inputFocus {
+	border: 1px solid #23a094;
+}
+
+.inputError {
+	border: 1px solid #b3261e;
+}
+
+.inputDisabled,
+.labelDisabled {
+	opacity: 38%;
+	pointer-events: none;
+}
+
+.label {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 16px;
+	color: #000000;
+	position: absolute;
+	top: 8px;
+	left: 30px;
+	font-size: 12px;
+	background-color: white;
+	padding: 0 2px;
+}
+
+.labelFocus {
+	color: #23a094;
+}
+
+.labelError {
+	color: #b3261e;
+}
+
+.errorMessage {
+	position: absolute;
+	top: 60px;
+	left: 40px;
+	color: red;
+}
+
+.hintMessage {
+	position: absolute;
+	top: 60px;
+	left: 30px;
+	font-family: 'Inter';
+	font-style: normal;
+	line-height: 16px;
+	color: #23a094;
+	font-weight: 400;
+	font-size: 10px;
+}
+
+.inputIcon {
+	position: absolute;
+	left: 220px;
+	top: 27px;
+}
+
+.searchIcon {
+	position: absolute;
+	left: 27px;
+	top: 30px;
+}
