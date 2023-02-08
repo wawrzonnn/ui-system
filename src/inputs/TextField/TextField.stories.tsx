@@ -1,9 +1,7 @@
-import React from 'react'
 import TextField from './TextField'
-import { Meta, Story } from '@storybook/preact'
+import { Story } from '@storybook/preact'
 import { h } from 'preact'
 import { Search } from '../../assets/Icons/Search'
-import { Fragment } from 'react'
 export default {
 	title: 'TextField',
 	component: TextField,
@@ -26,6 +24,7 @@ Default.args = {
 	autoFocus: false,
 	disabled: false,
 	error: '',
+	value: '',
 }
 
 export const withIcon: Story = args => (
@@ -34,7 +33,7 @@ export const withIcon: Story = args => (
 		label='label'
 		value={'     Input'}
 		name='name'
-		placeholder='placeholder'
+		placeholder='      placeholder'
 		hint='Hint message'
 		onChange={() => {}}
 		id='text-field-1'
@@ -46,5 +45,4 @@ withIcon.args = {
 	autoFocus: false,
 	disabled: false,
 	error: '',
-  icon: <Search />
 }

@@ -5,7 +5,6 @@
 	font-weight: 400;
 }
 
-
 .input {
 	min-width: 39px;
 	height: 24px;
@@ -22,15 +21,17 @@
 	font-size: 16px;
 	line-height: 24px;
 }
+
 .inputFocus {
-  border: 1px solid #23a094;
+	border: 1px solid #23a094;
 }
 
 .inputError {
-	border: 1px solid #B3261E;
+	border: 1px solid #b3261e;
 }
 
-.inputDisabled {
+.inputDisabled,
+.labelDisabled {
 	opacity: 38%;
 	pointer-events: none;
 }
@@ -39,17 +40,24 @@
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 12px;
+	font-size: 16px;
 	line-height: 16px;
 	color: #000000;
-	margin-top: -10px;
 	position: absolute;
-	top: 18px;
+	top: 8px;
 	left: 30px;
-	z-index: 2;
+	font-size: 12px;
+	background-color: white;
+	padding: 0 2px;
 }
 
+.labelFocus {
+	color: #23a094;
+}
 
+.labelError {
+	color: #b3261e;
+}
 
 .errorMessage {
 	position: absolute;
@@ -61,32 +69,23 @@
 .hintMessage {
 	position: absolute;
 	top: 60px;
-	left: 40px;
+	left: 30px;
 	font-family: 'Inter';
 	font-style: normal;
-	font-weight: 400;
-	font-size: 12px;
 	line-height: 16px;
+	color: #23a094;
+	font-weight: 400;
+	font-size: 10px;
 }
 
-/* .input:focus, .label:focus, .focus {
-	border: 1px solid #23a094;
-	color: #23a094
-} */
-
-
-
-
-/* input:focus + .label {
-  color:red;
-  font-size: 10px;
+.inputIcon {
+	position: absolute;
+	left: 220px;
+	top: 27px;
 }
 
-.input:focus + label::after {
-  content: "ⓧ";
-  font-size: 14px;
-  position: absolute;
-  right: -60px;
-  top: 10px;
-  transform: translateY(-50%);
-} */
+.searchIcon {
+	position: absolute;
+	left: 27px;
+	top: 30px;
+}

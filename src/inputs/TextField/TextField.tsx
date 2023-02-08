@@ -1,11 +1,11 @@
-import React, { InputHTMLAttributes } from 'react'
+import React from 'react'
 import styles from './TextField.module.css'
 import { h } from 'preact'
 import { Fragment } from 'react'
 import { Delete } from '../../assets/Icons/Delete'
 import { Error } from '../../assets/Icons/Error'
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {
+interface Props {
 	autoFocus?: boolean
 	disabled?: boolean
 	value: string
@@ -17,7 +17,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 	label: string
 	id: string
 	type?: string
-  icon?: React.ReactNode
+	icon?: React.ReactNode
 }
 
 const TextField: React.FC<Props> = ({
@@ -32,7 +32,7 @@ const TextField: React.FC<Props> = ({
 	onChange,
 	id,
 	type = 'text',
-  icon,
+	icon,
 	...props
 }) => {
 	return (
@@ -51,15 +51,22 @@ const TextField: React.FC<Props> = ({
 				type={type}
 				{...props}
 			/>
-      {icon && <Fragment>{icon}</Fragment>}
-			<Fragment>
-				{ autoFocus && <Delete /> || error && <Delete />}
-			</Fragment>
-			<label className={`${styles.label}  ${disabled && styles.disabled} ${autoFocus && styles.focus}`} htmlFor={id}>
-				label
+			{icon && <Fragment>{icon}</Fragment>}
+			<Fragment>{(autoFocus && <Delete />) || (error && <Error />)}</Fragment>
+			<label
+				className={`${styles.label} ${disabled && styles.labelDisabled} ${autoFocus && styles.labelFocus} ${
+					error && styles.labelError
+				}`}
+				htmlFor={id}>
+				{label}
 			</label>
-			{error ? <span className={styles.errorMessage}>{error}</span> : ''}
-			{autoFocus && <span className={styles.hintMessage}>{hint}</span>}
+			{autoFocus ? (
+				<span className={styles.hintMessage}>{hint}</span>
+			) : error ? (
+				<span className={styles.errorMessage}>{error}</span>
+			) : (
+				''
+			)}
 		</>
 	)
 }
