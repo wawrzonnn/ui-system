@@ -66,7 +66,7 @@ const TextField: React.FC<Props> = ({
 				onBlur={() => setFocused(false)}
 				{...props}
 			/>
-			{icon && <Fragment>{icon}</Fragment>}
+			{icon && <Fragment><span className={disabled? styles.searchIconDisabled : styles.searchIcon} >{icon}</span></Fragment>}
 			<Fragment>{(focused && !error && <Delete />) || (error && !disabled && !focused && <Error />)}</Fragment>
 			<label className={dynamicLabelClass} htmlFor={id}>
 				{label}

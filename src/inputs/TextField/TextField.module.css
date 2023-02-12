@@ -90,7 +90,14 @@
 .searchIcon {
 	position: absolute;
 	left: 20px;
-	top: 30px;
+	top: 29px;
+}
+
+.searchIconDisabled {
+	position: absolute;
+	left: 20px;
+	top: 29px;
+	opacity: 38%;
 }
 
 .labelActive {
