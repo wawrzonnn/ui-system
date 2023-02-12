@@ -4,6 +4,7 @@ import { h } from 'preact'
 import { Fragment } from 'react'
 import { Delete } from '../../assets/Icons/Delete'
 import { Error } from '../../assets/Icons/Error'
+import { useState } from 'react'
 
 interface Props {
 	autoFocus?: boolean
@@ -35,12 +36,24 @@ const TextField: React.FC<Props> = ({
 	icon,
 	...props
 }) => {
+	const [focused, setFocused] =useState(false)
+	const globalInputClass = styles.input
+	const disabledInputClass = disabled ? styles.inputDisabled : ''
+	const errorInputClass = error && !disabled ? styles.inputError : ''
+	const inputActiveClass = !disabled && value || placeholder || focused ? styles.inputActive : styles.input 
+	const dynamicInputClass = [globalInputClass, disabledInputClass, errorInputClass, inputActiveClass].join(' ')
+
+	const globalLabelClass = styles.label
+	const disabledLabelClass = disabled ? styles.labelDisabled : ''
+	const errorLabelClass = error && !disabled ? styles.labelError : ''
+	const labelActiveClass = !disabled && value || placeholder || focused ? styles.labelActive : styles.label
+	const dynamicLabelClass = [globalLabelClass, disabledLabelClass, errorLabelClass, labelActiveClass].join(' ')
+	
+
 	return (
 		<>
 			<input
-				className={`${styles.input} ${autoFocus && styles.inputFocus} ${error && styles.inputError}  ${
-					disabled && styles.inputDisabled
-				}`}
+				className={dynamicInputClass}
 				autoFocus={autoFocus}
 				disabled={disabled}
 				value={value}
@@ -49,20 +62,18 @@ const TextField: React.FC<Props> = ({
 				onChange={onChange}
 				id={id}
 				type={type}
+				onFocus={() => setFocused(true)}
+				onBlur={() => setFocused(false)}
 				{...props}
 			/>
-			{icon && <Fragment>{icon}</Fragment>}
-			<Fragment>{(autoFocus && <Delete />) || (error && <Error />)}</Fragment>
-			<label
-				className={`${styles.label} ${disabled && styles.labelDisabled} ${autoFocus && styles.labelFocus} ${
-					error && styles.labelError
-				}`}
-				htmlFor={id}>
+			{icon  && <Fragment>{icon}</Fragment>}
+			<Fragment>{(focused && !error && <Delete />) || (error && !disabled && <Error />)}</Fragment>
+			<label className={dynamicLabelClass} htmlFor={id}>
 				{label}
 			</label>
-			{autoFocus ? (
+			{autoFocus && !error ? (
 				<span className={styles.hintMessage}>{hint}</span>
-			) : error ? (
+			) : error && !disabled ? (
 				<span className={styles.errorMessage}>{error}</span>
 			) : (
 				''
@@ -72,4 +83,3 @@ const TextField: React.FC<Props> = ({
 }
 
 export default TextField
-

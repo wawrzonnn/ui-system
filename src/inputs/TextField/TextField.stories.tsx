@@ -1,39 +1,29 @@
-
 import TextField from './TextField'
 import { Story } from '@storybook/preact'
 import { h } from 'preact'
 import { Search } from '../../assets/Icons/Search'
+import styles from './TextField.module.css'
 export default {
 	title: 'TextField',
 	component: TextField,
 }
 
 export const Default: Story = args => (
-	<TextField
-		{...args}
-		label='label'
-		value='Input'
-		name='name'
-		placeholder='placeholder'
-		hint='Hint message'
-		onChange={() => {}}
-		id='text-field-1'
-	/>
+	<TextField {...args} label='label' name='name' hint='Hint message' onChange={() => {}} id='text-field-1' />
 )
 
 Default.args = {
-	autoFocus: false,
 	disabled: false,
 	error: '',
+	value: '',
+	placeholder: '',
 }
 
 export const withIcon: Story = args => (
 	<TextField
 		{...args}
 		label='label'
-		value={'     Input'}
 		name='name'
-		placeholder='      placeholder'
 		hint='Hint message'
 		onChange={() => {}}
 		id='text-field-1'
@@ -42,8 +32,8 @@ export const withIcon: Story = args => (
 )
 
 withIcon.args = {
-	autoFocus: false,
 	disabled: false,
 	error: '',
+	value: '',
+	placeholder: '',
 }
-
