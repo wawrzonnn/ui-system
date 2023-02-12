@@ -1,7 +1,7 @@
 import React from 'react'
 import { h } from 'preact'
 import styles from './Button.module.css'
-
+import { Spinner } from '../../assets/Icons/Spinner'
 interface ButtonProps {
 	type?: 'button' | 'submit'
 	disabled?: boolean
@@ -28,7 +28,8 @@ const Button: React.FC<ButtonProps> = ({
 
 	const allClasses = [globalButtonClass, variantClass, disabledClass, loadingClass].join(' ')
 	return (
-		<button className={allClasses} type={type} disabled={disabled} onClick={onClick}>
+		<button className={allClasses} type={type} disabled={disabled} onClick={!disabled && !isLoading && onClick}>
+			{isLoading &&  <Spinner data-testid="spinner" />}
 			{children}
 		</button>
 	)
