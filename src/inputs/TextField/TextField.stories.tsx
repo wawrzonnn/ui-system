@@ -17,6 +17,7 @@ Default.args = {
 	error: '',
 	value: '',
 	placeholder: '',
+	hint: '',
 }
 
 export const withIcon: Story = args => (

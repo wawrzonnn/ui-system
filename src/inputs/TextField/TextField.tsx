@@ -36,19 +36,19 @@ const TextField: React.FC<Props> = ({
 	icon,
 	...props
 }) => {
-	const [focused, setFocused] =useState(false)
+	const [focused, setFocused] = useState(false)
+
 	const globalInputClass = styles.input
 	const disabledInputClass = disabled ? styles.inputDisabled : ''
 	const errorInputClass = error && !disabled ? styles.inputError : ''
-	const inputActiveClass = !disabled && value || placeholder || focused ? styles.inputActive : styles.input 
+	const inputActiveClass = (!error && !disabled && value) || placeholder || focused ? styles.inputActive : styles.input
 	const dynamicInputClass = [globalInputClass, disabledInputClass, errorInputClass, inputActiveClass].join(' ')
 
 	const globalLabelClass = styles.label
 	const disabledLabelClass = disabled ? styles.labelDisabled : ''
 	const errorLabelClass = error && !disabled ? styles.labelError : ''
-	const labelActiveClass = !disabled && value || placeholder || focused ? styles.labelActive : styles.label
+	const labelActiveClass = (!error && !disabled && value) || placeholder || focused ? styles.labelActive : styles.label
 	const dynamicLabelClass = [globalLabelClass, disabledLabelClass, errorLabelClass, labelActiveClass].join(' ')
-	
 
 	return (
 		<>
@@ -66,14 +66,14 @@ const TextField: React.FC<Props> = ({
 				onBlur={() => setFocused(false)}
 				{...props}
 			/>
-			{icon  && <Fragment>{icon}</Fragment>}
-			<Fragment>{(focused && !error && <Delete />) || (error && !disabled && <Error />)}</Fragment>
+			{icon && <Fragment>{icon}</Fragment>}
+			<Fragment>{(focused && !error && <Delete />) || (error && !disabled && !focused && <Error />)}</Fragment>
 			<label className={dynamicLabelClass} htmlFor={id}>
 				{label}
 			</label>
-			{autoFocus && !error ? (
+			{focused && !error && !disabled ? (
 				<span className={styles.hintMessage}>{hint}</span>
-			) : error && !disabled ? (
+			) : error && !disabled && !focused ? (
 				<span className={styles.errorMessage}>{error}</span>
 			) : (
 				''

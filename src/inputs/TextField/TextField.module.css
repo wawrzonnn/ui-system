@@ -14,7 +14,7 @@
 	border: 1px solid #484649;
 	border-radius: 5px;
 	outline: none;
-	transition: border-color 0.2s;
+	transition: 0.3s;
 	position: relative;
 	font-family: 'Inter';
 	font-style: normal;
@@ -51,7 +51,7 @@
 	background-color: white;
 	padding: 0 2px;
 	display: block;
-	transition-duration: 2s;
+	transition-duration: .2s;
 }
 
 .labelFocus {
