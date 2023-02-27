@@ -1,4 +1,5 @@
 import {h} from 'preact'
+import { React } from 'react'
 
 export const Plus: React.FC<{className: string}> = () => {
    return ( 
