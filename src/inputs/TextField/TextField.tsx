@@ -39,15 +39,22 @@ const TextField: React.FC<Props> = ({
 	const [focused, setFocused] = useState(false)
 
 	const labelActiveClass = value || placeholder || focused ? styles.labelActive : styles.labelInactive
+	const labelFocusedClass = focused ? styles.labelFocused : ''
 	const labelErrorClass = error ? styles.labelError : ''
 	const labelDisabledClass = disabled ? styles.labelDisabled : ''
 
-	const inputActiveClass = focused ? styles.inputActive : ''
+	const inputFocusedClass = focused ? styles.inputFocused : ''
 	const inputErrorClass = error ? styles.inputError : ''
 	const inputDisabledClass = disabled ? styles.inputDisabled : ''
 
-	const labelDynamicClasses = [styles.baseLabel, labelActiveClass, labelErrorClass, labelDisabledClass].join(' ')
-	const inputDynamicClasses = [styles.inputWrapper, inputActiveClass, inputErrorClass, inputDisabledClass].join(' ')
+	const labelDynamicClasses = [
+		styles.baseLabel,
+		labelActiveClass,
+		labelErrorClass,
+		labelDisabledClass,
+		labelFocusedClass,
+	].join(' ')
+	const inputDynamicClasses = [styles.inputWrapper, inputFocusedClass, inputErrorClass, inputDisabledClass].join(' ')
 
 	return (
 		<div className={inputDynamicClasses}>
