@@ -21,15 +21,7 @@ Default.args = {
 }
 
 export const withIcon: Story = args => (
-	<TextField
-		{...args}
-		label='label'
-		name='name'
-		hint='Hint message'
-		onChange={() => {}}
-		id='text-field-1'
-		icon={<Search />}
-	/>
+	<TextField {...args} label='label' name='name' onChange={() => {}} id='text-field-1' icon={<Search />} />
 )
 
 withIcon.args = {
@@ -37,4 +29,5 @@ withIcon.args = {
 	error: '',
 	value: '',
 	placeholder: '',
+	hint: '',
 }

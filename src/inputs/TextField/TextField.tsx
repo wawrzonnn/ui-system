@@ -37,22 +37,17 @@ const TextField: React.FC<Props> = ({
 	...props
 }) => {
 	const [focused, setFocused] = useState(false)
-	const labelActiveClass = value || placeholder || focused ? styles.inputLabelActive : styles.inputLabelInactive
 
-	const labelDynamicClasses = [styles.baseLabel, labelActiveClass].join(' ')
-	const inputDynamicClasses = [styles.inputWrapper].join(' ')
+	const labelActiveClass = value || placeholder || focused ? styles.labelActive : styles.labelInactive
+	const labelErrorClass = error ? styles.labelError : ''
+	const labelDisabledClass = disabled ? styles.labelDisabled : ''
 
-	// const globalInputClass = styles.input
-	// const disabledInputClass = disabled ? styles.inputDisabled : ''
-	// const errorInputClass = error && !disabled ? styles.inputError : ''
-	// const inputActiveClass = (!error && !disabled && value) || placeholder || focused ? styles.inputActive : styles.input
-	// const dynamicInputClass = [globalInputClass, disabledInputClass, errorInputClass, inputActiveClass].join(' ')
+	const inputActiveClass = focused ? styles.inputActive : ''
+	const inputErrorClass = error ? styles.inputError : ''
+	const inputDisabledClass = disabled ? styles.inputDisabled : ''
 
-	// const globalLabelClass = styles.label
-	// const disabledLabelClass = disabled ? styles.labelDisabled : ''
-	// const errorLabelClass = error && !disabled ? styles.labelError : ''
-	// const labelActiveClass = (!error && !disabled && value) || placeholder || focused ? styles.labelActive : styles.label
-	// const dynamicLabelClass = [globalLabelClass, disabledLabelClass, errorLabelClass, labelActiveClass].join(' ')
+	const labelDynamicClasses = [styles.baseLabel, labelActiveClass, labelErrorClass, labelDisabledClass].join(' ')
+	const inputDynamicClasses = [styles.inputWrapper, inputActiveClass, inputErrorClass, inputDisabledClass].join(' ')
 
 	return (
 		<div className={inputDynamicClasses}>
