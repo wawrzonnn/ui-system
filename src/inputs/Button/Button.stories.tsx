@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/preact'
 import Button from './Button'
 import { h } from 'preact'
 import styles from './Button.module.css'
-import { Loading } from '../../assets/Icons/Spinner'
+import { Spinner } from '../../assets/Icons/Spinner'
 import { Plus } from '../../assets/Icons/Plus'
 import { Fragment } from 'react'
 

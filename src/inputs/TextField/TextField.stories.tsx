@@ -9,7 +9,7 @@ export default {
 }
 
 export const Default: Story = args => (
-	<TextField {...args} label='label' name='name' hint='Hint message' onChange={() => {}} id='text-field-1' />
+	<TextField {...args} label='label' name='name' onChange={() => {}} id='text-field-1' />
 )
 
 Default.args = {

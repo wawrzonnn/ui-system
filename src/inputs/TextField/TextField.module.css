@@ -6,22 +6,44 @@
 	font-weight: 400;
 }
 
-.input {
-	min-width: 39px;
-	height: 24px;
-	padding: 10px;
-	font-size: 16px;
-	border: 1px solid #484649;
-	border-radius: 5px;
-	outline: none;
-	transition: 0.3s;
-	position: relative;
+.inputWrapper {
 	font-family: 'Inter';
-	font-style: normal;
+	position: relative;
+	display: inline-block;
+}
+
+.baseLabel {
+	display: block;
+	transition: .3s;
+}
+
+.inputWrapper input {
+	display: block;
+	min-width: 210px;
+	padding: 16px;
 	font-weight: 400;
 	font-size: 16px;
-	line-height: 24px;
+	color: #000000;
+	padding-left: 30px;
 }
+
+.inputLabelActive {
+	z-index: 2;
+	position: absolute;
+	top: -8px;
+	left: 16px;
+	padding: 0 4px;
+}
+
+.inputLabelInactive {
+	z-index: 2;
+	position: absolute;
+	top: 14px;
+	left: 16px;
+	padding: 0 4px;
+	font-size: 16px;
+}
+
 
 .inputFocus {
 	border: 1px solid #23a094;
@@ -43,7 +65,7 @@
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 16px;
-	color: #000000;
+	color: #484649;
 	position: absolute;
 	top: 30px;
 	left: 40px;
@@ -89,8 +111,8 @@
 
 .searchIcon {
 	position: absolute;
-	left: 20px;
-	top: 29px;
+	left: 8px;
+	top: 20px;
 }
 
 .searchIconDisabled {
