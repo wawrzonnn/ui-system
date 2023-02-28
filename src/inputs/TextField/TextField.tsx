@@ -38,22 +38,31 @@ const TextField: React.FC<Props> = ({
 }) => {
 	const [focused, setFocused] = useState(false)
 
-	const globalInputClass = styles.input
-	const disabledInputClass = disabled ? styles.inputDisabled : ''
-	const errorInputClass = error && !disabled ? styles.inputError : ''
-	const inputActiveClass = (!error && !disabled && value) || placeholder || focused ? styles.inputActive : styles.input
-	const dynamicInputClass = [globalInputClass, disabledInputClass, errorInputClass, inputActiveClass].join(' ')
+	const labelActiveClass = value || placeholder || focused ? styles.labelActive : styles.labelInactive
+	const labelFocusedClass = focused ? styles.labelFocused : ''
+	const labelErrorClass = error ? styles.labelError : ''
+	const labelDisabledClass = disabled ? styles.labelDisabled : ''
 
-	const globalLabelClass = styles.label
-	const disabledLabelClass = disabled ? styles.labelDisabled : ''
-	const errorLabelClass = error && !disabled ? styles.labelError : ''
-	const labelActiveClass = (!error && !disabled && value) || placeholder || focused ? styles.labelActive : styles.label
-	const dynamicLabelClass = [globalLabelClass, disabledLabelClass, errorLabelClass, labelActiveClass].join(' ')
+	const inputFocusedClass = focused ? styles.inputFocused : ''
+	const inputErrorClass = error ? styles.inputError : ''
+	const inputDisabledClass = disabled ? styles.inputDisabled : ''
+
+	const labelDynamicClasses = [
+		styles.baseLabel,
+		labelActiveClass,
+		labelErrorClass,
+		labelDisabledClass,
+		labelFocusedClass,
+	].join(' ')
+	const inputDynamicClasses = [styles.inputWrapper, inputFocusedClass, inputErrorClass, inputDisabledClass].join(' ')
 
 	return (
-		<>
+		<div className={inputDynamicClasses}>
+			<label className={labelDynamicClasses} htmlFor={id}>
+				{label}
+			</label>
 			<input
-				className={dynamicInputClass}
+				className={inputDynamicClasses}
 				autoFocus={autoFocus}
 				disabled={disabled}
 				value={value}
@@ -66,19 +75,21 @@ const TextField: React.FC<Props> = ({
 				onBlur={() => setFocused(false)}
 				{...props}
 			/>
-			{icon && <Fragment><span className={disabled? styles.searchIconDisabled : styles.searchIcon} >{icon}</span></Fragment>}
+			{icon && (
+				<Fragment>
+					<span className={disabled ? styles.searchIconDisabled : styles.searchIcon}>{icon}</span>
+				</Fragment>
+			)}
 			<Fragment>{(focused && !error && <Delete />) || (error && !disabled && !focused && <Error />)}</Fragment>
-			<label className={dynamicLabelClass} htmlFor={id}>
-				{label}
-			</label>
-			{focused && !error && !disabled ? (
+
+			{hint && !error && !disabled ? (
 				<span className={styles.hintMessage}>{hint}</span>
-			) : error && !disabled && !focused ? (
+			) : error && !disabled ? (
 				<span className={styles.errorMessage}>{error}</span>
 			) : (
 				''
 			)}
-		</>
+		</div>
 	)
 }
 
