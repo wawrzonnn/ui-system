@@ -8,7 +8,7 @@ children: React.ReactNode
 
 
 const List: React.FC<ListProps> = ({ children }) => {
-return <ul>{children}</ul>
+return <ul className={styles.list}>{children}</ul>
 }
 
 const ListItem: React.FC<ListProps> = ({ children }) => {

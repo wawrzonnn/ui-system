@@ -7,65 +7,69 @@ import Switch from '../../inputs/Switch/Switch'
 import Checkbox from '../../inputs/Checkbox/Checkbox'
 
 interface ListItemArgs {
-  header: string
-  supportText: string
+	header: string
+	supportText: string
 }
 
 export default {
-  title: 'Lists',
-  component: List,
+	title: 'Lists',
+	component: List,
 }
 
-export const Default: Story<ListItemArgs> = (args) => (
-  <List>
-    <ListItem>
-      <div>
-        <h3>{args.header}</h3>
-        <p>{args.supportText}</p>
-      </div>
-    </ListItem>
-  </List>
+export const Default: Story<ListItemArgs> = args => (
+	<List>
+		<ListItem>
+			<div>
+				<h3 className={styles.header}>{args.header}</h3>
+				<p className={styles.supportText}>{args.supportText}</p>
+			</div>
+		</ListItem>
+	</List>
 )
 
 Default.args = {
-  header: 'List Item',
-  supportText: 'Supporting line text lorem ipsum dolor sit amet, consectetur',
+	header: 'List Item',
+	supportText: 'Supporting line text lorem ipsum dolor sit amet, consectetur',
 }
 
 export const ListItemSwitch: Story<ListItemArgs> = (args) => (
-  <List>
-    <ListItem>
-      <div>
-        <Switch />
+  <>
+    <List>
+      <div className={styles.listContainer}>
+        <ListItem className={styles.listItem}>
+          <div className={styles.switchContainer}>
+            <Switch />
+          </div>
+          <div>
+            <h3 className={styles.header}>{args.header}</h3>
+            <p className={styles.supportText}>{args.supportText}</p>
+          </div>
+        </ListItem>
       </div>
-      <div>
-        <h3>{args.header}</h3>
-        <p>{args.supportText}</p>
-      </div>
-    </ListItem>
-  </List>
-)
+    </List>
+  </>
+);
 
 ListItemSwitch.args = {
-  header: 'List Item',
-  supportText: 'Supporting line text lorem ipsum dolor sit amet, consectetur',
+	header: 'List Item',
+	supportText: 'Supporting line text lorem ipsum dolor sit amet, consectetur',
 }
 
-export const ListItemCheckbox: Story<ListItemArgs> = (args) => (
-  <List>
-    <ListItem>
-      <div>
-        <h3>{args.header}</h3>
-        <p>{args.supportText}</p>
-      </div>
-      <div>
-        <Checkbox />
-      </div>
-    </ListItem>
-  </List>
+export const ListItemCheckbox: Story<ListItemArgs> = args => (
+	<List>
+		<ListItem>
+			<div>
+				<h3 className={styles.header}>{args.header}</h3>
+				<p className={styles.supportText}>{args.supportText}</p>
+			</div>
+			<div>
+				<Checkbox />
+			</div>
+		</ListItem>
+	</List>
 )
 
 ListItemCheckbox.args = {
-  header: 'List Item',
-  supportText: 'Supporting line text lorem ipsum dolor sit amet, consectetur',
+	header: 'List Item',
+	supportText: 'Supporting line text lorem ipsum dolor sit amet, consectetur',
 }
