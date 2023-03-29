@@ -32,23 +32,21 @@ Default.args = {
 	supportText: 'Supporting line text lorem ipsum dolor sit amet, consectetur',
 }
 
-export const ListItemSwitch: Story<ListItemArgs> = (args) => (
-  <>
-    <List>
-      <div className={styles.listContainer}>
-        <ListItem className={styles.listItem}>
-          <div className={styles.switchContainer}>
-            <Switch />
-          </div>
-          <div>
-            <h3 className={styles.header}>{args.header}</h3>
-            <p className={styles.supportText}>{args.supportText}</p>
-          </div>
-        </ListItem>
-      </div>
-    </List>
-  </>
-);
+export const ListItemSwitch: Story<ListItemArgs> = args => (
+	<>
+		<List>
+			<ListItem className={styles.listItem}>
+				<div className={styles.switchContainer}>
+					<Switch />
+				</div>
+				<div>
+					<h3 className={styles.header}>{args.header}</h3>
+					<p className={styles.supportText}>{args.supportText}</p>
+				</div>
+			</ListItem>
+		</List>
+	</>
+)
 
 ListItemSwitch.args = {
 	header: 'List Item',
@@ -56,17 +54,19 @@ ListItemSwitch.args = {
 }
 
 export const ListItemCheckbox: Story<ListItemArgs> = args => (
-	<List>
-		<ListItem>
-			<div>
-				<h3 className={styles.header}>{args.header}</h3>
-				<p className={styles.supportText}>{args.supportText}</p>
-			</div>
-			<div>
-				<Checkbox />
-			</div>
-		</ListItem>
-	</List>
+	<>
+		<List>
+			<ListItem className={styles.listItem}>
+				<div>
+					<h3 className={styles.header}>{args.header}</h3>
+					<p className={styles.supportText}>{args.supportText}</p>
+				</div>
+				<div className={styles.checkboxContainer}>
+					<Checkbox />
+				</div>
+			</ListItem>
+		</List>
+	</>
 )
 
 ListItemCheckbox.args = {
