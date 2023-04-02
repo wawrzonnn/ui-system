@@ -1,16 +1,8 @@
-import { h } from 'preact'
-import { React } from 'react'
-import styles from '../../inputs/TextField/TextField.module.css'
+import * as React from 'react'
 
-export const Error: React.FC<{ className: string }> = () => {
+export const Error = () => {
 	return (
-		<svg
-			className={styles.inputIcon}
-			width='20'
-			height='20'
-			viewBox='0 0 20 20'
-			fill='none'
-			xmlns='http://www.w3.org/2000/svg'>
+		<svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
 			<path
 				fill-rule='evenodd'
 				clip-rule='evenodd'

@@ -1,7 +1,7 @@
 import React from 'react'
-import { h } from 'preact'
 import styles from './Button.module.css'
 import { Spinner } from '../../assets/Icons/Spinner'
+
 interface ButtonProps {
 	type?: 'button' | 'submit'
 	disabled?: boolean
@@ -9,13 +9,12 @@ interface ButtonProps {
 	isLoading?: boolean
 	onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
 	variant: 'primary' | 'secondary'
-	icons: 'show' | 'hide'
+	children: React.ReactNode
 }
 
 const Button: React.FC<ButtonProps> = ({
 	type = 'button',
 	disabled = false,
-	icon,
 	isLoading = false,
 	onClick,
 	variant = 'primary',
@@ -28,8 +27,12 @@ const Button: React.FC<ButtonProps> = ({
 
 	const allClasses = [globalButtonClass, variantClass, disabledClass, loadingClass].join(' ')
 	return (
-		<button className={allClasses} type={type} disabled={disabled} onClick={!disabled && !isLoading && onClick}>
-			{isLoading &&  <Spinner data-testid="spinner" />}
+		<button
+			className={allClasses}
+			type={type}
+			disabled={disabled}
+			onClick={!disabled && !isLoading ? onClick : undefined}>
+			{isLoading && <Spinner data-testid='spinner' className={''} />}
 			{children}
 		</button>
 	)

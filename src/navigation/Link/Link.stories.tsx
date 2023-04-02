@@ -1,17 +1,15 @@
-import { Meta, Story } from '@storybook/preact'
+import { Meta, Story } from '@storybook/react'
 import Link from './Link'
-import { h } from 'preact'
-import styles from './Link.module.css'
 import { Fragment } from 'react'
-import { Plus } from '../../assets/Icons/Plus'
-
+import { Settings } from '../../assets/Icons/Settings'
+import React from 'react'
 
 export default {
 	component: Link,
 } as Meta
 
 export const Default: Story = args => (
-	<Link {...args} onClick={() => console.log('clicked')}>
+	<Link to={''} {...args} onClick={() => console.log('clicked')}>
 		{args.disabled ? 'Disabled' : 'Enabled'}
 	</Link>
 )
@@ -21,8 +19,18 @@ Default.args = {
 
 export const withIcon: Story = args => {
 	return (
-		<Link {...args}>
-			{args.disabled ? <Fragment><Plus />Disabled</Fragment> : <Fragment><Plus />Enabled</Fragment>}
+		<Link to={''} {...args}>
+			{args.disabled ? (
+				<Fragment>
+					<Settings />
+					Disabled
+				</Fragment>
+			) : (
+				<Fragment>
+					<Settings />
+					Enabled
+				</Fragment>
+			)}
 		</Link>
 	)
 }

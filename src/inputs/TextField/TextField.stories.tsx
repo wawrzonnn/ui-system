@@ -1,15 +1,15 @@
 import TextField from './TextField'
-import { Story } from '@storybook/preact'
-import { h } from 'preact'
+import { Meta, Story } from '@storybook/react'
 import { Search } from '../../assets/Icons/Search'
-import styles from './TextField.module.css'
+import React from 'react'
+
 export default {
 	title: 'TextField',
 	component: TextField,
-}
+} as Meta
 
 export const Default: Story = args => (
-	<TextField {...args} label='label' name='name' onChange={() => {}} id='text-field-1' />
+	<TextField value={''} placeholder={''} {...args} label='label' name='name' onChange={() => { } } id='text-field-1' />
 )
 
 Default.args = {
@@ -21,7 +21,7 @@ Default.args = {
 }
 
 export const withIcon: Story = args => (
-	<TextField {...args} label='label' name='name' onChange={() => {}} id='text-field-1' icon={<Search />} />
+	<TextField value={''} placeholder={''} {...args} label='label' name='name' onChange={() => { } } id='text-field-1' icon={<Search />} />
 )
 
 withIcon.args = {

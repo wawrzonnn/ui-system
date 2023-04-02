@@ -1,20 +1,20 @@
-import { Story } from '@storybook/preact'
-import { h } from 'preact'
+import { Meta, Story } from '@storybook/react'
 import styles from './List.module.css'
 import { List, ListItem } from './List'
-import React from 'react'
+import React, { Fragment } from 'react'
 import Switch from '../../inputs/Switch/Switch'
 import Checkbox from '../../inputs/Checkbox/Checkbox'
 
 interface ListItemArgs {
 	header: string
 	supportText: string
+	className: string
 }
 
 export default {
-	title: 'Lists',
 	component: List,
-}
+	argTypes: {},
+} as Meta
 
 export const Default: Story<ListItemArgs> = args => (
 	<List>
@@ -37,7 +37,12 @@ export const ListItemSwitch: Story<ListItemArgs> = args => (
 		<List>
 			<ListItem className={styles.listItem}>
 				<div className={styles.switchContainer}>
-					<Switch />
+					<Switch
+						label={''}
+						onChange={function (): void {
+							throw new Error('Function not implemented.')
+						}}
+					/>
 				</div>
 				<div>
 					<h3 className={styles.header}>{args.header}</h3>
@@ -62,7 +67,17 @@ export const ListItemCheckbox: Story<ListItemArgs> = args => (
 					<p className={styles.supportText}>{args.supportText}</p>
 				</div>
 				<div className={styles.checkboxContainer}>
-					<Checkbox />
+					<Checkbox
+						id={''}
+						name={''}
+						value={''}
+						label={''}
+						checked={false}
+						disabled={false}
+						onChange={function (): void {
+							throw new Error('Function not implemented.')
+						}}
+					/>
 				</div>
 			</ListItem>
 		</List>

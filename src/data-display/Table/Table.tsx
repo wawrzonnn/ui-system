@@ -1,48 +1,39 @@
-import React from 'react'
+import { PropsWithChildren } from 'react'
 import styles from './Table.module.css'
-import { h } from 'preact'
+import React from 'react'
 
-interface TableCellProps {
+interface TableCellProps extends PropsWithChildren<{}> {
 	align: 'left' | 'center' | 'right'
-	children: React.ReactNode
 }
 
-interface TableProps {
-	children: React.ReactNode
-}
+interface TableProps extends PropsWithChildren<{}> {}
 
-interface TableHeadProps {
-	children: React.ReactNode
-}
-interface TableRowProps {
-	children: React.ReactNode
-}
-interface TableBodyProps {
-	children: React.ReactNode
-}
+interface TableHeadProps extends PropsWithChildren<{}> {}
 
-function Table({ children }: TableProps) {
+interface TableRowProps extends PropsWithChildren<{}> {}
+
+interface TableBodyProps extends PropsWithChildren<{}> {}
+
+export const Table: React.FC<TableProps> = ({ children }) => {
 	return <table className={styles.table}>{children}</table>
 }
 
-function TableHead({ children }: TableHeadProps) {
+export const TableHead: React.FC<TableHeadProps> = ({ children }) => {
 	return <thead className={styles.tableHead}>{children}</thead>
 }
 
-function TableRow({ children }: TableRowProps) {
+export const TableRow: React.FC<TableRowProps> = ({ children }) => {
 	return <tr className={styles.tableRow}>{children}</tr>
 }
 
-function TableBody({ children }: TableBodyProps) {
+export const TableBody: React.FC<TableBodyProps> = ({ children }) => {
 	return <tbody>{children}</tbody>
 }
 
-function TableCell({ align, children }: TableCellProps) {
+export const TableCell: React.FC<TableCellProps> = ({ align, children }) => {
 	return (
-		<td style={{ textAlign: align }} className={styles.tableCell}>
-			{children}
-		</td>
+		<div className={styles.tableCell}>
+			<td style={{ textAlign: align }}>{children}</td>
+		</div>
 	)
 }
-
-export { Table, TableHead, TableRow, TableCell, TableBody }

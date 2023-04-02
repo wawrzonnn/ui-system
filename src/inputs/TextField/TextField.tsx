@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './TextField.module.css'
-import { h } from 'preact'
 import { Fragment } from 'react'
 import { Delete } from '../../assets/Icons/Delete'
 import { Error } from '../../assets/Icons/Error'
@@ -80,7 +79,10 @@ const TextField: React.FC<Props> = ({
 					<span className={disabled ? styles.searchIconDisabled : styles.searchIcon}>{icon}</span>
 				</Fragment>
 			)}
-			<Fragment>{(focused && !error && <Delete />) || (error && !disabled && !focused && <Error />)}</Fragment>
+			<Fragment>
+				{(focused && !error && <Delete className={styles.deleteIcon} />) ||
+					(error && !disabled && !focused && <Error className={styles.errorIcon} />)}
+			</Fragment>
 
 			{hint && !error && !disabled ? (
 				<span className={styles.hintMessage}>{hint}</span>
