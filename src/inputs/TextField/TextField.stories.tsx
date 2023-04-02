@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import TextField from './TextField'
 import { Meta, Story } from '@storybook/react'
 import { Search } from '../../assets/Icons/Search'

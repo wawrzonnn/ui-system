@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { PropsWithChildren } from 'react'
 import styles from './Table.module.css'
 import React from 'react'
@@ -6,13 +7,14 @@ interface TableCellProps extends PropsWithChildren<{}> {
 	align: 'left' | 'center' | 'right'
 }
 
-interface TableProps extends PropsWithChildren<{}> {}
 
-interface TableHeadProps extends PropsWithChildren<{}> {}
+type TableProps = PropsWithChildren<{}>
 
-interface TableRowProps extends PropsWithChildren<{}> {}
+type TableHeadProps = PropsWithChildren<{}>
 
-interface TableBodyProps extends PropsWithChildren<{}> {}
+type TableRowProps = PropsWithChildren<{}>
+
+type TableBodyProps = PropsWithChildren<{}>
 
 export const Table: React.FC<TableProps> = ({ children }) => {
 	return <table className={styles.table}>{children}</table>
