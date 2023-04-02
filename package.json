@@ -12,7 +12,8 @@
 		"clean": "rimraf dist/",
 		"copy-files": "copyfiles -u 1 src/**/*.css dist/",
 		"build": "yarn clean && tsc -b && yarn copy-files",
-		"lint": "eslint --ext .ts,.tsx ."
+		"lint": "eslint --ext .ts,.tsx .",
+		"prepare": "husky install"
 	},
 	"publishConfig": {
 		"registry": "http://139.59.154.199:4873"
@@ -37,6 +38,7 @@
 		"eslint": "^8.37.0",
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-react-hooks": "^4.6.0",
+		"husky": "^8.0.3",
 		"jest": "^27.0.0",
 		"preact-cli": "^3.4.2",
 		"prettier": "^2.8.2",
