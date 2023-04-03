@@ -1,10 +1,10 @@
-import { Meta, Story } from '@storybook/preact'
+import { Meta, Story } from '@storybook/react'
 import Button from './Button'
-import { h } from 'preact'
 import styles from './Button.module.css'
 import { Spinner } from '../../assets/Icons/Spinner'
-import { Plus } from '../../assets/Icons/Plus'
+import { Settings } from '../../assets/Icons/Settings'
 import { Fragment } from 'react'
+import React from 'react'
 
 export default {
 	component: Button,
@@ -17,7 +17,7 @@ export default {
 } as Meta
 
 export const Primary: Story = args => (
-	<Button {...args} onClick={() => console.log('clicked')}>
+	<Button variant={'primary'} {...args} onClick={() => console.log('clicked')}>
 		{args.isLoading
 			? 'Loading'
 			: args.variant === 'primary'
@@ -37,15 +37,15 @@ Primary.args = {
 
 export const withIcon: Story = args => {
 	return (
-		<Button {...args}>
+		<Button onClick={() => console.log('clicked')} variant={'primary'} {...args}>
 			{args.isLoading && !args.disabled ? (
 				<Fragment>
-					<Loading className={styles.icons} />
+					<Spinner className={styles.icons} />
 					Loading...
 				</Fragment>
 			) : (
 				<Fragment>
-					<Plus className={styles.icons} />
+					<Settings className={styles.icons} />
 					{args.variant === 'primary'
 						? 'Primary'
 						: args.variant === 'secondary'

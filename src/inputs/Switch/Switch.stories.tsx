@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react'
 import Switch from './Switch'
-import { Meta, Story } from '@storybook/preact'
-import { h } from 'preact'
-import styles from './Switch.module.css'
+import { Meta, Story } from '@storybook/react'
+
 
 export default {
 	title: 'Switch',
@@ -10,7 +10,7 @@ export default {
 } as Meta
 
 export const Default: Story = args => {
-	return <Switch {...args} />
+	return <Switch label={''} onChange={() => {}} {...args} />
 }
 
 Default.args = {

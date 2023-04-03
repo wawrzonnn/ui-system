@@ -1,13 +1,12 @@
 import React from 'react'
 import  './Switch.module.css'
-import { h } from 'preact'
 import styles from './Switch.module.css'
 
 interface Props {
 label: string;
 checked?: boolean;
 disabled?: boolean;
-onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+onChange: ((event: React.ChangeEvent<HTMLInputElement>) => void) | undefined
 }
 
 const Switch: React.FC<Props> = ({ label, checked = false, disabled = false, onChange }) => {
@@ -19,7 +18,7 @@ return (
      type="checkbox"
      checked={checked}
      disabled={disabled}
-     onChange={!disabled && onChange}
+     onChange={!disabled ? onChange : undefined}
    />
 <span className={`${styles.slider} ${disabled ? styles.disabled : ''}`} />
 </label>

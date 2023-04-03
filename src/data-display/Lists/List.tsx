@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import styles from './List.module.css'
-import { h } from 'preact'
 
 interface ListProps {
 	children: React.ReactNode
+	className?: string
 }
 
-const List: React.FC<ListProps> = ({ children }) => {
+const List: React.FC<PropsWithChildren<ListProps>> = ({ children }) => {
 	return <ul className={styles.list}>{children}</ul>
 }
 

@@ -12,11 +12,15 @@
 
 .tableRow {
 	outline: 0.1px solid #1c1b1f;
+	display: flex;
+
 }
 
 .tableCell {
 	padding: 15px 10px;
-	width: 250px;
 	font-size: 14px;
 	line-height: 20px;
+	width: 150px;
+	display: flex;
+	justify-content: center;
 }

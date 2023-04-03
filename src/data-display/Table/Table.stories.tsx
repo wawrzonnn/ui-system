@@ -1,7 +1,5 @@
-import React from 'react'
-import { Story, Meta } from '@storybook/preact'
-import { h } from 'preact'
-import styles from './Table.module.css'
+import React, { Fragment } from 'react'
+import { Story, Meta } from '@storybook/react'
 import { Table, TableHead, TableRow, TableCell, TableBody } from './Table'
 
 export default {
@@ -26,7 +24,7 @@ const rows: Array<RowData> = [
 	{ breed: 'Golden Retriever', name: 'Mufasa', weight: 49, height: 24, chip: true, ower: false },
 ]
 
-export const Template: Story = args => (
+export const Template: Story = () => (
 	<>
 		<Table>
 			<TableHead>

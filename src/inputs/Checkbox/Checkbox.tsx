@@ -1,5 +1,4 @@
 import React from 'react'
-import { h } from 'preact'
 import styles from './Checkbox.module.css'
 
 interface CheckboxProps {
@@ -9,7 +8,7 @@ interface CheckboxProps {
 	label: string
 	checked: boolean
 	disabled: boolean
-	onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+	onChange: ((event: React.ChangeEvent<HTMLInputElement>) => void) | undefined
 }
 
 const Checkbox: React.FC<CheckboxProps> = ({ id, name, value, label, checked, disabled, onChange }) => {
@@ -24,7 +23,7 @@ const Checkbox: React.FC<CheckboxProps> = ({ id, name, value, label, checked, di
 				value={value}
 				checked={checked}
 				disabled={disabled}
-				onChange={!disabled && onChange}></input>
+				onChange={!disabled ? onChange : undefined}></input>
 		</label>
 	)
 }

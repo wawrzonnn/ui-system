@@ -1,7 +1,7 @@
 import React from 'react';
-import {render, fireEvent} from '@testing-library/preact';
+import {render, fireEvent} from '@testing-library/react';
 import Switch from './Switch';
-import {h} from 'preact'
+
 
 
 describe('Switch', () => {
@@ -23,7 +23,7 @@ expect(onChange).not.toHaveBeenCalled();
 
 it('should change checked state when clicked', () => {
 const { getByLabelText } = render(<Switch label="label" />);
-const switchEl = getByLabelText('label');
+const switchEl = getByLabelText('label') as HTMLInputElement
 fireEvent.click(switchEl);
 expect(switchEl.checked).toBe(true);
 fireEvent.click(switchEl);
