@@ -40,7 +40,7 @@ export const ListItemSwitch: Story<ListItemArgs> = args => (
 					<Switch
 						label={''}
 						onChange={function (): void {
-							throw new Error('Function not implemented.')
+							console.log('Ooooops')
 						}}
 					/>
 				</div>
