@@ -1,31 +1,34 @@
-import React from 'react'
-import styles from './Checkbox.module.css'
+import React, { useState } from 'react';
+import styles from './Checkbox.module.css';
 
 interface CheckboxProps {
-	id: string
-	name: string
-	value: string
-	label: string
-	checked: boolean
-	disabled: boolean
-	onChange: ((event: React.ChangeEvent<HTMLInputElement>) => void) | undefined
+  label: string;
+  disabled?: boolean;
+  checked?: boolean;
+  onChange?: (checked: boolean) => void;
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({ id, name, value, label, checked, disabled, onChange }) => {
-	return (
-		<label htmlFor={id}>
-			{label}
-			<input
-				type='checkbox'
-				className={styles.checkbox}
-				id={id}
-				name={name}
-				value={value}
-				checked={checked}
-				disabled={disabled}
-				onChange={!disabled ? onChange : undefined}></input>
-		</label>
-	)
-}
+const Checkbox: React.FC<CheckboxProps> = ({ label, disabled = false, checked = false, onChange }) => {
+  const [isChecked, setIsChecked] = useState(checked);
 
-export default Checkbox
+  const handleChange = () => {
+    if (disabled) return;
+    setIsChecked(!isChecked);
+    if (onChange) onChange(!isChecked);
+  };
+
+  return (
+    <div className={styles.checkbox}>
+      <input
+        type="checkbox"
+        id={`checkbox-${label}`}
+        checked={isChecked}
+        disabled={disabled}
+        onChange={handleChange}
+      />
+      <label htmlFor={`checkbox-${label}`}>{label}</label>
+    </div>
+  );
+};
+
+export default Checkbox;
