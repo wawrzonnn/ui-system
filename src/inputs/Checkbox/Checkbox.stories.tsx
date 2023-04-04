@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react'
 import Checkbox from './Checkbox'
 import { Meta, Story } from '@storybook/react'
@@ -17,11 +18,11 @@ export default {
 	},
 } as Meta
 
-export const DefaultCheckbox: Story = args => (
-	<Checkbox id={''} name={''} value={''} label={''} checked={false} disabled={false} onChange={undefined} {...args} />
+export const Default: Story = args => (
+	<Checkbox id={''} name={''} value={''} label={''} disabled={false} onChange={() => { } } {...args} />
 )
 
-DefaultCheckbox.args = {
+Default.args = {
 	checked: true,
 	disabled: false,
 }

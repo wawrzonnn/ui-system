@@ -10,7 +10,7 @@ export default {
 } as Meta
 
 export const Default: Story = args => {
-	return <Switch label={''} onChange={() => {}} {...args} />
+	return <Switch id={''} label={''} onChange={() => { } } {...args} />
 }
 
 Default.args = {
