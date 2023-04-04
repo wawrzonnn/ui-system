@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styles from './Checkbox.module.css';
+import React, { useState } from "react";
+import styles from "./Checkbox.module.css";
 
 interface CheckboxProps {
   label: string;
@@ -8,7 +8,12 @@ interface CheckboxProps {
   onChange?: (checked: boolean) => void;
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({ label, disabled = false, checked = false, onChange }) => {
+const Checkbox: React.FC<CheckboxProps> = ({
+  label,
+  disabled = false,
+  checked = false,
+  onChange,
+}) => {
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChange = () => {
