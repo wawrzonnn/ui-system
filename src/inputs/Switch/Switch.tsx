@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styles from './Switch.module.css';
+import React, { useState } from "react";
+import styles from "./Switch.module.css";
 
 interface Props {
   label: string;
@@ -30,7 +30,7 @@ const Switch: React.FC<Props> = ({ label, disabled = false, onChange, id }) => {
         onChange={handleChange}
         id={id}
       />
-      <span className={`${styles.slider} ${disabled ? styles.disabled : ''}`} />
+      <span className={`${styles.slider} ${disabled ? styles.disabled : ""}`} />
     </label>
   );
 };
