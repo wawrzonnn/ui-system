@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './TextField.module.css'
 import { Fragment } from 'react'
 import { Delete } from '../../assets/Icons/Delete'
 import { Error } from '../../assets/Icons/Error'
-import { useState } from 'react'
 
 interface Props {
 	autoFocus?: boolean
@@ -55,6 +54,12 @@ const TextField: React.FC<Props> = ({
 	].join(' ')
 	const inputDynamicClasses = [styles.inputWrapper, inputFocusedClass, inputErrorClass, inputDisabledClass].join(' ')
 
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		if (!disabled) {
+			onChange(event)
+		}
+	}
+
 	return (
 		<div className={inputDynamicClasses}>
 			<label className={labelDynamicClasses} htmlFor={id}>
@@ -67,7 +72,7 @@ const TextField: React.FC<Props> = ({
 				value={value}
 				name={name}
 				placeholder={placeholder}
-				onChange={onChange}
+				onChange={handleChange}
 				id={id}
 				type={type}
 				onFocus={() => setFocused(true)}
@@ -80,8 +85,16 @@ const TextField: React.FC<Props> = ({
 				</Fragment>
 			)}
 			<Fragment>
-				{(focused && !error && <Delete className={styles.deleteIcon} />) ||
-					(error && !disabled && !focused && <Error className={styles.errorIcon} />)}
+				{(focused && !error && (
+					<span className={styles.deleteIcon}>
+						<Delete />
+					</span>
+				)) ||
+					(error && !disabled && !focused && (
+						<span className={styles.errorIcon}>
+							<Error />
+						</span>
+					))}
 			</Fragment>
 
 			{hint && !error && !disabled ? (
