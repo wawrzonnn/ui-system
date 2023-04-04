@@ -40,7 +40,7 @@ export const ListItemSwitch: Story<ListItemArgs> = args => (
 					<Switch
 						label={''}
 						onChange={function (): void {
-							console.log('Ooooops')
+							console.log('Ooooops');
 						}}
 					/>
 				</div>
