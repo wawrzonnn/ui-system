@@ -1,27 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 .linkGlobal {
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 20px;
-    text-decoration: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
 }
 
 .linkGlobal:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .linkEnabled {
-	color: #b23386;
+  color: #b23386;
 }
 
 .linkDisabled {
-	color: #1c1b1f;
-	opacity: 0.38;
+  color: #1c1b1f;
+  opacity: 0.38;
 }
 
 .linkDisabled:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
