@@ -6,6 +6,6 @@ module.exports = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   moduleNameMapper: {
     "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js",
-    "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
   },
 };
