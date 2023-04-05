@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import React from "react";
 import { render, fireEvent, act } from "@testing-library/react";
 import TextField from "./TextField";
-import styles from "./TextField.module.css";
 
 describe("TextField", () => {
   it("should call onChange handler when typing onto it", () => {
@@ -44,7 +42,7 @@ describe("TextField", () => {
     const { getByPlaceholderText } = render(
       <TextField
         value=""
-        onChange={() => {}}
+        onChange={() => console.log("changed")}
         label="Test"
         placeholder="Test"
         id="test"
@@ -56,8 +54,7 @@ describe("TextField", () => {
     act(() => {
       fireEvent.focus(input);
     });
-    console.log('classList', input.classList)
-    expect(input.classList.contains('inputFocused')).toBe(true);
+    console.log("classList", input.classList);
+    expect(input.classList.contains("inputFocused")).toBe(true);
   });
 });
-

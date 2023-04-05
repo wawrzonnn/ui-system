@@ -7,14 +7,10 @@ export default {
   component: Checkbox,
 } as Meta;
 
-export const Default: Story = (args) => (
-  <Checkbox
- 
-  label={""} {...args}  />
-);
+export const Default: Story = (args) => <Checkbox label={""} {...args} />;
 
 Default.args = {
   checked: true,
   disabled: false,
-  label: "Checkbox label"
+  label: "Checkbox label",
 };

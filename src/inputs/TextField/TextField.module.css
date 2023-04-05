@@ -91,7 +91,8 @@
   font-size: 10px;
 }
 
-.errorIcon, .deleteIcon {
+.errorIcon,
+.deleteIcon {
   position: absolute;
   left: 220px;
   top: 17px;
