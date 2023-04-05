@@ -1,4 +1,10 @@
-.checkbox:checked {
-  border-radius: 2px;
-  accent-color: #b23386;
+.checkbox {
+	border-radius: 2px;
+	accent-color: #b23386;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	color: #000000;
 }
