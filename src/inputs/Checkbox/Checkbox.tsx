@@ -3,6 +3,9 @@ import styles from "./Checkbox.module.css";
 
 interface CheckboxProps {
   label: string;
+  id: string;
+  value: string;
+  name: string;
   disabled?: boolean;
   checked?: boolean;
   onChange?: (checked: boolean) => void;
@@ -10,6 +13,9 @@ interface CheckboxProps {
 
 const Checkbox: React.FC<CheckboxProps> = ({
   label,
+  id,
+  value,
+  name,
   disabled = false,
   checked = false,
   onChange,
@@ -24,10 +30,12 @@ const Checkbox: React.FC<CheckboxProps> = ({
 
   return (
     <div className={styles.checkbox}>
-      <label htmlFor={`checkbox-${label}`}>
+      <label className={styles.label}>
         <input
           type="checkbox"
-          id={`checkbox-${label}`}
+          id={id}
+          value={value}
+          name={name}
           checked={isChecked}
           disabled={disabled}
           onChange={handleChange}

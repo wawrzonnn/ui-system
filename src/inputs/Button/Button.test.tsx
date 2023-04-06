@@ -7,7 +7,7 @@ describe("Button", () => {
   it("calls onClick when clicking on it and it is not disabled", () => {
     const onClick = jest.fn();
     const { getByText } = render(
-      <Button onClick={onClick} variant={"primary"}>
+      <Button onClick={onClick} variant={"primary"} isLoading={false}>
         Click me
       </Button>
     );

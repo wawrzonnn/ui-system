@@ -1,10 +1,17 @@
 .checkbox {
-  border-radius: 2px;
-  accent-color: #b23386;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  color: #000000;
+	border-radius: 2px;
+	accent-color: #b23386;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	color: #000000;
+	display: flex;
+}
+
+.label {
+	justify-content: center;
+	align-items: center;
+	display: flex;
 }

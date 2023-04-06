@@ -72,7 +72,7 @@ export const ListItemCheckbox: Story<ListItemArgs> = (args) => (
             id={""}
             name={""}
             value={""}
-            label={""}
+            label={"Checkboc label"}
             checked={false}
             disabled={false}
             onChange={function (): void {
