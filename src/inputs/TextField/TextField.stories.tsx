@@ -4,7 +4,6 @@ import { Search } from "../../assets/Icons/Search";
 import React from "react";
 
 export default {
-  title: "TextField",
   component: TextField,
 } as Meta;
 

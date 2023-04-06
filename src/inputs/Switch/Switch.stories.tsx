@@ -4,7 +4,6 @@ import Switch from "./Switch";
 import { Meta, Story } from "@storybook/react";
 
 export default {
-  title: "Switch",
   component: Switch,
 } as Meta;
 

@@ -12,8 +12,7 @@ interface ListItemArgs {
 }
 
 export default {
-  component: List,
-  argTypes: {},
+  component: List
 } as Meta;
 
 export const Default: Story<ListItemArgs> = (args) => (
