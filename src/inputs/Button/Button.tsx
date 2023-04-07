@@ -5,17 +5,12 @@ import { Fragment } from "react";
 import classNames from "classnames/bind";
 const cx = classNames.bind(styles);
 
-// export enum ButtonVariant {
-//   primary = "primary",
-//   secondary = "secondary",
-// }
-
 interface ButtonProps {
   type?: "button" | "submit";
   disabled?: boolean;
   isLoading?: boolean;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  variant: 'primary' | 'secondary';
+  variant: "primary" | "secondary";
   icon?: React.ReactNode;
   children: React.ReactNode;
 }

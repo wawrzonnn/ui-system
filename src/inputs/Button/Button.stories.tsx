@@ -19,7 +19,7 @@ export const Default: Story = (args) => (
   <Button
     icon={<Settings />}
     isLoading={false}
-    variant={'primary'}
+    variant={"primary"}
     {...args}
     onClick={() => console.log("clicked")}
   >
@@ -27,7 +27,7 @@ export const Default: Story = (args) => (
   </Button>
 );
 Default.args = {
-  variant: 'primary',
+  variant: "primary",
   disabled: false,
   isLoading: false,
 };
