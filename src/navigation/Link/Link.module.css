@@ -7,21 +7,19 @@
   font-size: 14px;
   line-height: 20px;
   text-decoration: none;
+  display: flex;
 }
 
 .linkGlobal:hover {
   text-decoration: underline;
 }
 
-.link__container {
-  display: flex;
-}
 
 .linkEnabled {
   color: #b23386;
 }
 
-.linkDisabled {
+.linkDisabled, .linkDisabled svg path {
   color: #1c1b1f;
   opacity: 0.38;
 }

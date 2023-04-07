@@ -3,15 +3,13 @@ import styles from "./List.module.css";
 
 interface ListProps {
   children: React.ReactNode;
-  className?: string;
 }
 
-const List: React.FC<PropsWithChildren<ListProps>> = ({ children }) => {
+export const List = ({ children, }: PropsWithChildren<ListProps>) => {
   return <ul className={styles.list}>{children}</ul>;
 };
 
-const ListItem: React.FC<ListProps> = ({ children }) => {
+export const ListItem = ({ children, }: PropsWithChildren<ListProps>) => {
   return <li className={styles.listItem}>{children}</li>;
 };
 
-export { List, ListItem };

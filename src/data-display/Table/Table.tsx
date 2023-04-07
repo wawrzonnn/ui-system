@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
+
 import { PropsWithChildren } from "react";
 import styles from "./Table.module.css";
 import React from "react";
