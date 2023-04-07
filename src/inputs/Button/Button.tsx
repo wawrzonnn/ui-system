@@ -5,17 +5,17 @@ import { Fragment } from "react";
 import classNames from "classnames/bind";
 const cx = classNames.bind(styles);
 
-export enum ButtonVariant {
-  primary = "primary",
-  secondary = "secondary",
-}
+// export enum ButtonVariant {
+//   primary = "primary",
+//   secondary = "secondary",
+// }
 
 interface ButtonProps {
   type?: "button" | "submit";
   disabled?: boolean;
   isLoading?: boolean;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  variant: ButtonVariant;
+  variant: 'primary' | 'secondary';
   icon?: React.ReactNode;
   children: React.ReactNode;
 }
@@ -30,8 +30,7 @@ export const Button = ({
 }: PropsWithChildren<ButtonProps>) => {
   const buttonClasses = cx({
     buttons: true,
-    primary: variant === ButtonVariant.primary,
-    secondary: variant === ButtonVariant.secondary,
+    [variant]: true,
     disabled: disabled,
     isLoading: isLoading && !disabled,
   });

@@ -14,12 +14,12 @@
   text-decoration: underline;
 }
 
-
 .linkEnabled {
   color: #b23386;
 }
 
-.linkDisabled, .linkDisabled svg path {
+.linkDisabled,
+.linkDisabled svg path {
   color: #1c1b1f;
   opacity: 0.38;
 }
