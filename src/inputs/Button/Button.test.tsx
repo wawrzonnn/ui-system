@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import Button from "./Button";
+import { Button } from "./Button";
 
 describe("Button", () => {
   it("calls onClick when clicking on it and it is not disabled", () => {
