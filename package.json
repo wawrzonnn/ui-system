@@ -17,10 +17,8 @@
     "prepare": "husky install",
     "pretty": "prettier --write .",
     "predeploy": "build-storybook",
-"deploy": "gh-pages -d storybook-static"
-    
+    "deploy": "gh-pages -d storybook-static"
   },
-  
   "publishConfig": {
     "registry": "http://139.59.154.199:4873"
   },
