@@ -1,9 +1,0 @@
-.fullWidth,
-.fullWidth button,
-.parentWidth button {
-  width: 100%;
-}
-
-.parentWidth {
-  max-width: 270px;
-}
