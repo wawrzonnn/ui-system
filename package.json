@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "author": "Nerdbord",
   "license": "MIT",
+  "homepage": "https://wawrzonnn.github.io/ui-system",
   "scripts": {
     "test": "jest src",
     "storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
@@ -14,7 +15,10 @@
     "build": "yarn clean && tsc -b && yarn copy-files",
     "lint": "eslint --ext .ts,.tsx .",
     "prepare": "husky install",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write .",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static"
+
   },
   "publishConfig": {
     "registry": "http://139.59.154.199:4873"
@@ -39,6 +43,7 @@
     "eslint": "^8.37.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^5.0.0",
     "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.0",
