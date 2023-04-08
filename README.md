@@ -18,4 +18,8 @@ yarn test
 
 For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
 
-live: https://wawrzonnn.github.io/ui-system
+
+
+DEPLOYMENT:
+
+ui-system-oad1-mzh6n7l6h-wawrzonnn.vercel.app
