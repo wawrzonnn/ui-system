@@ -5,21 +5,10 @@ import AvatarTemplate from "../../assets/images/AvatarTemplate.jpg";
 
 export default {
   component: Avatar,
-  argTypes: {
-    src: {
-      control: {
-        type: "radio",
-        labels: {
-          none: "None",
-          image: "AvatarTemplate",
-        },
-      },
-    },
-  },
 } as Meta;
 
 export const Default: Story = (args) => (
-  <Avatar src={AvatarTemplate} alt={"handsome boy"} {...args}>
+  <Avatar src={""} alt={"handsome boy"} {...args}>
     fdggfd
   </Avatar>
 );
