@@ -1,0 +1,22 @@
+name: Deploy Storybook to GitHub Pages
+
+on:
+  push:
+    branches:
+      - deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Build Storybook
+        run: npm run build-storybook
+      - name: Deploy to GitHub Pages
+        uses: enriikke/storybook-deployer@v1.2.0
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          storybook-dir: "./storybook-static"
+          cname: "example.com"

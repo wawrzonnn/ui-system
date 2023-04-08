@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "author": "Nerdbord",
   "license": "MIT",
+  "homepage": "https://Sadoslav.github.io/ui-system/",
   "scripts": {
     "test": "jest src",
     "storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
@@ -14,8 +15,12 @@
     "build": "yarn clean && tsc -b && yarn copy-files",
     "lint": "eslint --ext .ts,.tsx .",
     "prepare": "husky install",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write .",
+    "predeploy": "build-storybook",
+"deploy": "gh-pages -d storybook-static"
+    
   },
+  
   "publishConfig": {
     "registry": "http://139.59.154.199:4873"
   },
