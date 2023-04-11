@@ -1,0 +1,8 @@
+.fullWidth {
+  width: 100%;
+}
+
+.parentWidth,
+.parentWidth img {
+  max-width: 170px;
+}
