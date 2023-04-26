@@ -1,24 +1,24 @@
 .tab {
-	display: inline-block;
-	padding: 7px 15px;
-	cursor: pointer;
-	font-family: 'Inter';
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 20px;
-	text-align: center;
-	color: #313033;
-	border-bottom: 1px solid #e7e0ec;
-  position: relative
+  display: inline-block;
+  padding: 7px 15px;
+  cursor: pointer;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #313033;
+  border-bottom: 1px solid #e7e0ec;
+  position: relative;
 }
 
 .active {
-	font-family: 'Inter';
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 20px;
-	text-align: center;
-	color: #b23386;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #b23386;
   position: relative;
 }
 
@@ -29,14 +29,13 @@
   content: "";
   width: 65%;
   height: 3px;
-  background-color: #B23386; 
+  background-color: #b23386;
   left: 50%;
   transform: translateX(-50%);
   top: 32.5px;
   border-radius: 100px 100px 0px 0px;
 }
 
-
 .tabContent {
-	margin-top: 200px;
+  margin-top: 200px;
 }

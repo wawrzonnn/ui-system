@@ -2,7 +2,7 @@ import React from "react";
 import { Meta, Story } from "@storybook/react";
 import { Card, CardImage, CardContent } from "./Card";
 import { Button } from "../../inputs";
-import AvatarTemplate from "../../assets/images/AvatarTemplate.jpg"
+import AvatarTemplate from "../../assets/images/AvatarTemplate.jpg";
 import styles from "./Card.module.css";
 import classNames from "classnames/bind";
 

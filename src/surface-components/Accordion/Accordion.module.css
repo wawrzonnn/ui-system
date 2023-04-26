@@ -1,0 +1,23 @@
+.accordionDefault {
+  display: flex;
+  flex-direction: column;
+  max-width: 486px;
+  background: #ffffff;
+  border: 1px solid #e6e1e5;
+  padding: 10px;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inter";
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.accordionContent {
+  font-family: "Inter";
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 10px;
+}
