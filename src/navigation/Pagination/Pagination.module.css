@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.paginationItem {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+}
+
+.paginationItem:hover {
+  background: #c9c5ca;
+}
+.activePage {
+  background: #e6e1e5;
+}
+
+.buttonPrev,
+.buttonNext {
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.buttonDisabled {
+  cursor: auto;
+}
+
+.buttonDisabled svg path {
+  fill: #e6e1e5;
+}
