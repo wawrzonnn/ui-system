@@ -1,34 +1,37 @@
-import React from "react";
+import * as React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import Switch from "./Switch";
+import { Switch } from "./Switch";
 
-describe("Switch", () => {
-  it("should call onChange when clicked", () => {
-    const onChange = jest.fn();
-    const { getByLabelText } = render(
-      <Switch label="label" onChange={onChange} id="switch-1" />
-    );
-    const switchEl = getByLabelText("label");
-    fireEvent.click(switchEl);
-    expect(onChange).toHaveBeenCalled();
-  });
+test("onChange handler should be called when clicking on it, when one is not disabled. Expected isChecked should be true. After clicking on it again, expected isChecked value should be false", () => {
+  const handleChange = jest.fn();
 
-  it("should not call onChange when disabled", () => {
-    const onChange = jest.fn();
-    const { getByLabelText } = render(
-      <Switch label="label" disabled onChange={onChange} id="switch-1" />
-    );
-    const switchEl = getByLabelText("label");
-    fireEvent.click(switchEl);
-    expect(onChange).not.toHaveBeenCalled();
-  });
+  const { getByRole } = render(
+    <Switch id={"switch-1"} onChange={handleChange} />
+  );
+  const switchElement = getByRole("checkbox") as HTMLInputElement;
 
-  it("should change checked state when clicked", () => {
-    const { getByLabelText } = render(<Switch label="label" id="switch-1" />);
-    const switchEl = getByLabelText("label") as HTMLInputElement;
-    fireEvent.click(switchEl);
-    expect(switchEl.checked).toBe(true);
-    fireEvent.click(switchEl);
-    expect(switchEl.checked).toBe(false);
-  });
+  fireEvent.click(switchElement);
+  expect(switchElement.checked).toEqual(true);
+
+  fireEvent.click(switchElement);
+  expect(switchElement.checked).toEqual(false);
+
+  fireEvent.click(switchElement);
+
+  expect(handleChange).toBeCalled();
+});
+
+test("onChange handler should not be called when Switch is disabled", () => {
+  const handleChange = jest.fn();
+
+  const { getByRole } = render(
+    <Switch id={"switch-1"} disabled onChange={handleChange} />
+  );
+  const switchElement = getByRole("checkbox");
+
+  expect(switchElement).toBeInTheDocument();
+
+  fireEvent.click(switchElement);
+
+  expect(handleChange).not.toBeCalled();
 });

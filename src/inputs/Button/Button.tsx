@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useState } from "react";
 import styles from "./Button.module.css";
 import { Spinner } from "../../assets/Icons/Spinner";
 import { Fragment } from "react";
@@ -22,16 +22,27 @@ export const Button = ({
   variant,
   icon,
   children,
+  onClick,
 }: PropsWithChildren<ButtonProps>) => {
+  const [isPressed, setPressed] = useState(false);
+
   const buttonClasses = cx({
-    buttons: true,
+    [styles.default]: true,
     [variant]: true,
-    disabled: disabled,
-    isLoading: isLoading && !disabled,
+    [styles.disabled]: disabled,
+    [styles.pressed]: isPressed,
+    [styles.isLoading]: isLoading && !disabled,
   });
 
   return (
-    <button className={buttonClasses} type={type} disabled={disabled}>
+    <button
+      onMouseDown={() => setPressed(true)}
+      onMouseUp={() => setPressed(false)}
+      className={buttonClasses}
+      type={type}
+      disabled={disabled || isLoading}
+      onClick={onClick}
+    >
       {!disabled && isLoading ? (
         <>
           <span className={styles.iconSpinner}>

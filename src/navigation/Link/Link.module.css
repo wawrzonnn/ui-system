@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
-.linkGlobal {
+.default {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
@@ -10,21 +10,21 @@
   display: flex;
 }
 
-.linkGlobal:hover {
+.default:hover {
   text-decoration: underline;
 }
 
-.linkEnabled {
+.enabled {
   color: #b23386;
 }
 
-.linkDisabled,
-.linkDisabled svg path {
+.disabled,
+.disabled svg path {
   color: #1c1b1f;
   opacity: 0.38;
 }
 
-.linkDisabled:hover {
+.disabled:hover {
   text-decoration: none;
 }
 

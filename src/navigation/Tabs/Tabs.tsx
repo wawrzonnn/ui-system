@@ -49,8 +49,8 @@ export const Tab = ({ id, children }: PropsWithChildren<TabProps>) => {
   };
 
   const tabClasses = cx({
-    tab: true,
-    active: isActive,
+    [styles.tab]: true,
+    [styles.active]: isActive,
   });
 
   return (

@@ -20,14 +20,14 @@ export const Accordion = ({
   };
 
   return (
-    <div className={styles.accordionDefault}>
-      <div className={styles.accordionHeader}>
+    <div className={styles.default}>
+      <div className={styles.header} onClick={handleSwitch}>
         <span>{header}</span>
-        <span onClick={handleSwitch}>
+        <span>
           <Arrow />
         </span>
       </div>
-      {isOpen && <div className={styles.accordionContent}>{children}</div>}
+      {isOpen && <div className={styles.content}>{children}</div>}
     </div>
   );
 };

@@ -5,14 +5,6 @@ import { Settings } from "../../assets/Icons/Settings";
 
 export default {
   component: Button,
-  argTypes: {
-    icon: {
-      options: {
-        none: null,
-        Settings: <Settings />,
-      },
-    },
-  },
 } as Meta;
 
 export const Default: Story = (args) => (

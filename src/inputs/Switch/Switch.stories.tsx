@@ -1,15 +1,20 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
-import React from "react";
-import Switch from "./Switch";
 import { Meta, Story } from "@storybook/react";
+import * as React from "react";
+import { Switch } from "./Switch";
 
 export default {
   component: Switch,
 } as Meta;
 
-export const Default: Story = (args) => {
-  return <Switch id={""} label={""} onChange={() => {}} {...args} />;
-};
+export const Default: Story = (args) => (
+  <Switch
+    onChange={() => {
+      console.log("Swirch changed!");
+    }}
+    id={""}
+    {...args}
+  />
+);
 
 Default.args = {
   checked: false,
