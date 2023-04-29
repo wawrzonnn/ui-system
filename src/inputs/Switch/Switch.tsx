@@ -1,38 +1,49 @@
-import React, { useState } from "react";
+import * as React from "react";
+import { PropsWithChildren, useState } from "react";
+import classNames from "classnames/bind";
+
 import styles from "./Switch.module.css";
 
-interface Props {
-  label: string;
+const cx = classNames.bind(styles);
+
+export interface SwitchProps {
+  checked?: boolean;
   disabled?: boolean;
-  onChange?: (checked: boolean) => void;
+  onChange(checked: boolean): void;
   id: string;
 }
 
-const Switch: React.FC<Props> = ({ label, disabled = false, onChange, id }) => {
+export const Switch = ({
+  disabled = false,
+  id = "id",
+  ...props
+}: PropsWithChildren<SwitchProps>) => {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = () => {
-    if (disabled) return;
-    setChecked(!checked);
-    if (onChange) {
-      onChange(!checked);
-    }
-  };
+  const labelClassName = cx({
+    [styles.label]: true,
+    [styles.labelDisabled]: disabled,
+  });
+
+  const sliderClassName = cx({
+    [styles.slider]: true,
+    [styles.sliderDisabled]: disabled,
+  });
 
   return (
-    <label className={styles.switch}>
-      {label}
+    <label className={labelClassName}>
       <input
-        className={styles.input}
         type="checkbox"
         checked={checked}
         disabled={disabled}
-        onChange={handleChange}
+        onChange={() => {
+          if (disabled) return;
+          setChecked(!checked);
+          props.onChange(!checked);
+        }}
         id={id}
       />
-      <span className={`${styles.slider} ${disabled ? styles.disabled : ""}`} />
+      <span className={sliderClassName} />
     </label>
   );
 };
-
-export default Switch;

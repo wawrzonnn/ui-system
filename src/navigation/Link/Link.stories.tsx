@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react";
-import Link from "./Link";
+import { Link } from "./Link";
 import React from "react";
 
 export default {
@@ -12,5 +12,5 @@ export const Default: Story = (args) => (
   </Link>
 );
 Default.args = {
-  disabled: true,
+  disabled: false,
 };

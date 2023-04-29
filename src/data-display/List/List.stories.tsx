@@ -2,8 +2,8 @@ import { Meta, Story } from "@storybook/react";
 import styles from "./List.module.css";
 import { List, ListItem } from "./List";
 import React, { Fragment } from "react";
-import Switch from "../../inputs/Switch/Switch";
-import Checkbox from "../../inputs/Checkbox/Checkbox";
+import { Switch } from "../../inputs/Switch/Switch";
+import { Checkbox } from "../../inputs/Checkbox/Checkbox";
 
 interface ListItemArgs {
   header: string;
@@ -36,7 +36,12 @@ export const ListItemSwitch: Story<ListItemArgs> = (args) => (
     <List>
       <ListItem>
         <div className={styles.switchContainer}>
-          <Switch label={""} id={""} />
+          <Switch
+            id={""}
+            onChange={() => {
+              console.log("Switch changed!");
+            }}
+          />
         </div>
         <div>
           <h3 className={styles.header}>{args.header}</h3>
@@ -65,9 +70,12 @@ export const ListItemCheckbox: Story<ListItemArgs> = (args) => (
             id={""}
             name={""}
             value={""}
-            label={"Checkboc label"}
-            checked={false}
+            label={"Checkbox label"}
+            checked={true}
             disabled={false}
+            onChange={() => {
+              console.log("Checkbox changed!");
+            }}
           />
         </div>
       </ListItem>

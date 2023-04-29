@@ -15,10 +15,9 @@ export const Avatar = ({
   alt,
 }: PropsWithChildren<AvatarProps>) => {
   const avatarClasses = cx({
-    avatar: true,
+    [styles.avatar]: true,
     [size]: true,
-    avatarContainer: !src,
-    avatarPlaceholder: !src,
+    [styles.container]: true,
   });
 
   return src ? (

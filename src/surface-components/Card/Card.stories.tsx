@@ -33,7 +33,7 @@ export const Default: Story<CardStoryProps> = ({ fullWidth }) => {
         <div className={buttonsWrapperClasses}>
           <Button
             onClick={() => {
-              console.log("Hello");
+              console.log("Clicked!");
             }}
             variant={"primary"}
           >
@@ -41,7 +41,7 @@ export const Default: Story<CardStoryProps> = ({ fullWidth }) => {
           </Button>
           <Button
             onClick={() => {
-              console.log("Hello");
+              console.log("Clicked!");
             }}
             variant={"secondary"}
           >

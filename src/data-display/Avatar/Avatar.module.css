@@ -19,7 +19,7 @@
   height: 24px;
 }
 
-.avatarContainer {
+.container {
   background-color: tomato;
   display: flex;
   justify-content: center;

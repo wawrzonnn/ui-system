@@ -45,10 +45,10 @@ export const Step = ({ children, index }: PropsWithChildren<StepProps>) => {
   const { activeStep } = useContext(StepContext);
 
   const stepperClasses = cx({
-    stepDefault: true,
-    stepCompleted: activeStep > index,
-    stepDisabled: activeStep < index,
-    stepActive: activeStep === index,
+    [styles.stepDefault]: true,
+    [styles.stepCompleted]: activeStep > index,
+    [styles.stepDisabled]: activeStep < index,
+    [styles.stepActive]: activeStep === index,
   });
   return <div className={stepperClasses}>{children}</div>;
 };

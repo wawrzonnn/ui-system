@@ -13,9 +13,9 @@
   border: 1px solid #484649;
 }
 
-.baseLabel {
+.defaultLabel {
   display: block;
-  transition: 0.3s;
+  transition-duration: 0.3s;
 }
 
 .inputWrapper input {
@@ -26,6 +26,7 @@
   font-size: 16px;
   color: #000000;
   padding-left: 30px;
+  transition-duration: 0.3s;
 }
 
 .labelActive {
@@ -36,6 +37,7 @@
   padding: 0 4px;
   background-color: white;
   font-size: 12px;
+  transition-duration: 0.3s;
 }
 
 .labelInactive {
@@ -46,6 +48,7 @@
   padding: 0 4px;
   font-size: 16px;
   padding-left: 15px;
+  transition-duration: 0.3s;
 }
 
 .labelFocused {

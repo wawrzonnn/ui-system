@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, PropsWithChildren } from "react";
 import styles from "./TextField.module.css";
 import { Delete } from "../../assets/Icons/Delete";
 import { Error } from "../../assets/Icons/Error";
+import classNames from "classnames";
+const cx = classNames.bind(styles);
 
-interface Props {
+interface TextFieldProps {
   autoFocus?: boolean;
   disabled?: boolean;
   value: string;
@@ -18,7 +20,7 @@ interface Props {
   icon?: React.ReactNode;
 }
 
-const TextField: React.FC<Props> = ({
+export const TextField = ({
   autoFocus = false,
   disabled = false,
   label,
@@ -31,33 +33,23 @@ const TextField: React.FC<Props> = ({
   id,
   type = "text",
   icon,
-  ...props
-}) => {
+}: PropsWithChildren<TextFieldProps>) => {
   const [focused, setFocused] = useState(false);
 
-  const labelActiveClass =
-    value || placeholder || focused ? styles.labelActive : styles.labelInactive;
-  const labelFocusedClass = focused ? styles.labelFocused : "";
-  const labelErrorClass = error ? styles.labelError : "";
-  const labelDisabledClass = disabled ? styles.labelDisabled : "";
-
-  const inputFocusedClass = focused ? styles.inputFocused : "";
-  const inputErrorClass = error ? styles.inputError : "";
-  const inputDisabledClass = disabled ? styles.inputDisabled : "";
-
-  const labelDynamicClasses = [
-    styles.baseLabel,
-    labelActiveClass,
-    labelErrorClass,
-    labelDisabledClass,
-    labelFocusedClass,
-  ].join(" ");
-  const inputDynamicClasses = [
-    styles.inputWrapper,
-    inputFocusedClass,
-    inputErrorClass,
-    inputDisabledClass,
-  ].join(" ");
+  const labelClasses = cx({
+    defaultLabel: true,
+    [styles.labelActive]: value || placeholder || focused,
+    [styles.labelInactive]: !value && !placeholder && !focused,
+    [styles.labelFocused]: focused,
+    [styles.labelError]: error,
+    [styles.labelDisabled]: disabled,
+  });
+  const inputClasses = cx({
+    inputWrapper: true,
+    [styles.inputFocused]: focused,
+    [styles.inputError]: error,
+    [styles.inputDisabled]: disabled,
+  });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!disabled) {
@@ -66,12 +58,12 @@ const TextField: React.FC<Props> = ({
   };
 
   return (
-    <div className={inputDynamicClasses}>
-      <label className={labelDynamicClasses} htmlFor={id}>
+    <div className={styles.inputWrapper}>
+      <label className={labelClasses} htmlFor={id}>
         {label}
       </label>
       <input
-        className={inputDynamicClasses}
+        className={inputClasses}
         autoFocus={autoFocus}
         disabled={disabled}
         value={value}
@@ -82,7 +74,6 @@ const TextField: React.FC<Props> = ({
         type={type}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        {...props}
       />
       {icon && (
         <span
@@ -111,5 +102,3 @@ const TextField: React.FC<Props> = ({
     </div>
   );
 };
-
-export default TextField;

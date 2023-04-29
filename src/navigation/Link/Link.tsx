@@ -1,6 +1,9 @@
 import React from "react";
+import { PropsWithChildren } from "react";
 import styles from "./Link.module.css";
 import { Settings } from "../../assets/Icons/Settings";
+import classNames from "classnames";
+const cx = classNames.bind(styles);
 
 interface LinkProps {
   to: string;
@@ -8,24 +11,24 @@ interface LinkProps {
   target?: "_blank" | "_self" | "_parent" | "_top";
   disabled?: boolean;
   onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
-  children: React.ReactNode;
 }
-
-const Link: React.FC<LinkProps> = ({
+export const Link = ({
   to = "www.google.pl",
   id = "google",
   target = "_blank",
   disabled = false,
   onClick,
   children,
-}) => {
-  const globalLinkClass = styles.linkGlobal;
-  const optionClass =
-    disabled === false ? styles.linkEnabled : styles.linkDisabled;
-  const allClasses = [globalLinkClass, optionClass].join(" ");
+}: PropsWithChildren<LinkProps>) => {
+  const linkClasses = cx({
+    [styles.default]: true,
+    [styles.enabled]: !disabled,
+    [styles.disabled]: disabled,
+  });
+
   return (
     <a
-      className={allClasses}
+      className={linkClasses}
       href={to}
       id={id}
       target={target}
@@ -38,5 +41,3 @@ const Link: React.FC<LinkProps> = ({
     </a>
   );
 };
-
-export default Link;

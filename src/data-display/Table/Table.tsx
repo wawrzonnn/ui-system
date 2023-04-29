@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-types */
-
 import { PropsWithChildren } from "react";
 import styles from "./Table.module.css";
 import React from "react";
@@ -16,23 +15,23 @@ type TableRowProps = PropsWithChildren<{}>;
 
 type TableBodyProps = PropsWithChildren<{}>;
 
-export const Table: React.FC<TableProps> = ({ children }) => {
+export const Table = ({ children }: TableProps) => {
   return <table className={styles.table}>{children}</table>;
 };
 
-export const TableHead: React.FC<TableHeadProps> = ({ children }) => {
+export const TableHead = ({ children }: TableHeadProps) => {
   return <thead className={styles.tableHead}>{children}</thead>;
 };
 
-export const TableRow: React.FC<TableRowProps> = ({ children }) => {
+export const TableRow = ({ children }: TableRowProps) => {
   return <tr className={styles.tableRow}>{children}</tr>;
 };
 
-export const TableBody: React.FC<TableBodyProps> = ({ children }) => {
+export const TableBody = ({ children }: TableBodyProps) => {
   return <tbody>{children}</tbody>;
 };
 
-export const TableCell: React.FC<TableCellProps> = ({ align, children }) => {
+export const TableCell = ({ align, children }: TableCellProps) => {
   return (
     <div className={styles.tableCell}>
       <td style={{ textAlign: align }}>{children}</td>
