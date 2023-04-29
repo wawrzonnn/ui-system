@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { Tabs, Tab, TabContent } from "./Tabs";
 
@@ -6,7 +6,7 @@ export default {
   component: Tabs,
 } as Meta;
 
-export const Default: Story = () => (
+export const Default: StoryFn = () => (
   <Tabs defaultOpenedId="tab-1">
     <Tab id="tab-1">Breakfast</Tab>
     <Tab id="tab-2">Lunches</Tab>

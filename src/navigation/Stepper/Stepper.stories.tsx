@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import React from "react";
 import { Stepper, Step } from "./Stepper";
 import { Checkmark } from "../../assets/Icons/Checkmark";
@@ -13,7 +13,7 @@ const steps = [
   { label: "3", completed: false, disabled: true },
 ];
 
-export const Default: Story = () => (
+export const Default: StoryFn = () => (
   <div className="App">
     <Stepper
       activeStep={1}

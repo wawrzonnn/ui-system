@@ -1,12 +1,12 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Accordion } from "./Accordion";
 
 export default {
   component: Accordion,
 } as Meta;
 
-export const Default: Story = () => {
+export const Default: StoryFn = () => {
   return (
     <Accordion header={"Accordion 1"} defaultOpen={false}>
       <span>

@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import * as React from "react";
 import { Switch } from "./Switch";
 
@@ -6,7 +6,7 @@ export default {
   component: Switch,
 } as Meta;
 
-export const Default: Story = (args) => (
+export const Default: StoryFn = (args) => (
   <Switch
     onChange={() => {
       console.log("Swirch changed!");

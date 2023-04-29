@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 import { Table, TableHead, TableRow, TableCell, TableBody } from "./Table";
 
 export default {
@@ -58,7 +58,7 @@ const rows: Array<RowData> = [
   },
 ];
 
-export const Template: Story = () => (
+export const Template: StoryFn = () => (
   <>
     <Table>
       <TableHead>
