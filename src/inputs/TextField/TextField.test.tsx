@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent, act } from "@testing-library/react";
-import TextField from "./TextField";
+import { TextField } from "./TextField";
 
 describe("TextField", () => {
   it("should call onChange handler when typing onto it", () => {
