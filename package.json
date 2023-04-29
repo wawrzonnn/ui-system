@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "author": "Nerdbord",
   "license": "MIT",
-  "homepage": "https://wawrzonnn.github.io/ui-system",
+  "homepage": "https://wawrzonnn.github.io/ui-sem",
   "scripts": {
     "test": "jest src",
     "storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 6006",
@@ -17,7 +17,7 @@
     "prepare": "husky install",
     "pretty": "prettier --write .",
     "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "publishConfig": {
     "registry": "http://139.59.154.199:4873"
