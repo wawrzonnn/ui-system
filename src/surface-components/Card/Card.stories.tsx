@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Card, CardImage, CardContent } from "./Card";
 import { Button } from "../../inputs";
 import AvatarTemplate from "../../assets/images/AvatarTemplate.jpg";
@@ -16,7 +16,7 @@ interface CardStoryProps {
   fullWidth?: boolean;
 }
 
-export const Default: Story<CardStoryProps> = ({ fullWidth }) => {
+export const Default: StoryFn<CardStoryProps> = ({ fullWidth }) => {
   const buttonsWrapperClasses = cx({
     buttonsWrapper: true,
     buttonsWrapperFixedWidth: !fullWidth,

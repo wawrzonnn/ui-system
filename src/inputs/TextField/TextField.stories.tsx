@@ -1,5 +1,5 @@
 import { TextField } from "./TextField";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Search } from "../../assets/Icons/Search";
 import React from "react";
 
@@ -7,7 +7,7 @@ export default {
   component: TextField,
 } as Meta;
 
-export const Default: Story = (args) => (
+export const Default: StoryFn = (args) => (
   <TextField
     value={""}
     placeholder={""}
@@ -27,7 +27,7 @@ Default.args = {
   hint: "",
 };
 
-export const Icon: Story = (args) => (
+export const Icon: StoryFn = (args) => (
   <TextField
     value={""}
     placeholder={""}

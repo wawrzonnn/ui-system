@@ -1,4 +1,4 @@
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import { Avatar } from "./Avatar";
 import React from "react";
 import Heartagram from "../../assets/images/AvatarTemplate.jpg";
@@ -7,7 +7,7 @@ export default {
   component: Avatar,
 } as Meta;
 
-export const Default: Story = (args) => <Avatar src={""} alt={""} {...args} />;
+export const Default: StoryFn = (args) => <Avatar src={""} alt={""} {...args} />;
 
 Default.args = {
   size: "big",

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Meta, Story } from "@storybook/react/types-6-0";
+import { Meta, StoryFn } from "@storybook/react";
 import Pagination from "./Pagination";
 
 export default {
   component: Pagination,
 } as Meta;
 
-export const Default: Story = () => {
+export const Default: StoryFn = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const handleChange = (page: number) => setCurrentPage(page);
 
