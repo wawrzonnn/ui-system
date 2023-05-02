@@ -10,7 +10,7 @@
   position: relative;
   display: inline-block;
   border-radius: 0px;
-  border: 1px solid #484649;
+  border: 0
 }
 
 .defaultLabel {
@@ -27,6 +27,7 @@
   color: #000000;
   padding-left: 30px;
   transition-duration: 0.3s;
+  border: 1px solid black
 }
 
 .labelActive {
