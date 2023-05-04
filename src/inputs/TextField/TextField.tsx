@@ -49,6 +49,7 @@ export const TextField = ({
     [styles.inputFocused]: focused,
     [styles.inputError]: error,
     [styles.inputDisabled]: disabled,
+    [styles.inputDefault]: !error || !focused
   });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
