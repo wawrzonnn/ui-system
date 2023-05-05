@@ -28,7 +28,7 @@
 
 .cardContent p,
 h1 {
-  margin: 20px 5px;
+  margin: 20px 15px;
 }
 
 .buttonsWrapper {
@@ -45,7 +45,7 @@ h1 {
 
 .buttonsWrapper button {
   width: 100%;
-  margin: 5px;
+  margin: 10px;
 }
 
 .buttonsWrapper:nth-last-child(1) {

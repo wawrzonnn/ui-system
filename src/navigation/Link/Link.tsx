@@ -1,7 +1,6 @@
 import React from "react";
 import { PropsWithChildren } from "react";
 import styles from "./Link.module.css";
-import { Settings } from "../../assets/Icons/Settings";
 import classNames from "classnames";
 const cx = classNames.bind(styles);
 
@@ -34,9 +33,6 @@ export const Link = ({
       target={target}
       onClick={onClick}
     >
-      <span className={styles.iconSettings}>
-        <Settings />
-      </span>
       {children}
     </a>
   );

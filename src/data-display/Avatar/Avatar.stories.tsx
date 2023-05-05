@@ -7,7 +7,9 @@ export default {
   component: Avatar,
 } as Meta;
 
-export const Default: StoryFn = (args) => <Avatar src={""} alt={""} {...args} />;
+export const Default: StoryFn = (args) => (
+  <Avatar src={""} alt={""} {...args} />
+);
 
 Default.args = {
   size: "big",

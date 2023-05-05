@@ -11,7 +11,6 @@ interface ButtonProps {
   isLoading?: boolean;
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   variant: "primary" | "secondary";
-  icon?: React.ReactNode;
   children: React.ReactNode;
 }
 
@@ -20,7 +19,6 @@ export const Button = ({
   disabled = false,
   isLoading,
   variant,
-  icon,
   children,
   onClick,
 }: PropsWithChildren<ButtonProps>) => {
@@ -51,10 +49,7 @@ export const Button = ({
           {children}
         </>
       ) : (
-        <>
-          {icon && <span className={styles.icon}>{icon}</span>}
-          {children}
-        </>
+        children
       )}
     </button>
   );

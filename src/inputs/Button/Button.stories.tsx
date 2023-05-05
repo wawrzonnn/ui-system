@@ -2,6 +2,8 @@ import { Meta, StoryFn } from "@storybook/react";
 import { Button } from "./Button";
 import React from "react";
 import { Settings } from "../../assets/Icons/Settings";
+import { Fragment } from "react";
+import styles from "../Button/Button.module.css";
 
 export default {
   component: Button,
@@ -9,7 +11,6 @@ export default {
 
 export const Default: StoryFn = (args) => (
   <Button
-    icon={<Settings />}
     isLoading={false}
     variant={"primary"}
     {...args}
@@ -19,6 +20,27 @@ export const Default: StoryFn = (args) => (
   </Button>
 );
 Default.args = {
+  variant: "primary",
+  disabled: false,
+  isLoading: false,
+};
+
+export const Icon: StoryFn = (args) => (
+  <Button
+    isLoading={false}
+    variant={"primary"}
+    {...args}
+    onClick={() => console.log("clicked")}
+  >
+    <>
+      <span className={styles.icon}>
+        <Settings />
+      </span>
+    </>
+    Button
+  </Button>
+);
+Icon.args = {
   variant: "primary",
   disabled: false,
   isLoading: false,
