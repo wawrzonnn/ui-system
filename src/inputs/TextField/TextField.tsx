@@ -37,7 +37,7 @@ export const TextField = ({
   const [focused, setFocused] = useState(false);
 
   const labelClasses = cx({
-    defaultLabel: true,
+    labelDefault: true,
     [styles.labelActive]: value || placeholder || focused,
     [styles.labelInactive]: !value && !placeholder && !focused,
     [styles.labelFocused]: focused,
@@ -49,7 +49,7 @@ export const TextField = ({
     [styles.inputFocused]: focused,
     [styles.inputError]: error,
     [styles.inputDisabled]: disabled,
-    [styles.inputDefault]: !error || !focused
+    [styles.inputDefault]: !error || !focused,
   });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
