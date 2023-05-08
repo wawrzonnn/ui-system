@@ -3,17 +3,17 @@ import { PropsWithChildren } from "react";
 import styles from "./Table.module.css";
 import React from "react";
 
-interface TableCellProps extends PropsWithChildren<{}> {
+interface TableCellProps extends PropsWithChildren<object> {
   align: "left" | "center" | "right";
 }
 
-type TableProps = PropsWithChildren<{}>;
+type TableProps = PropsWithChildren<object>;
 
-type TableHeadProps = PropsWithChildren<{}>;
+type TableHeadProps = PropsWithChildren<object>;
 
-type TableRowProps = PropsWithChildren<{}>;
+type TableRowProps = PropsWithChildren<object>;
 
-type TableBodyProps = PropsWithChildren<{}>;
+type TableBodyProps = PropsWithChildren<object>;
 
 export const Table = ({ children }: TableProps) => {
   return <table className={styles.table}>{children}</table>;
