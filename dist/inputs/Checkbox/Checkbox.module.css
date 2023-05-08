@@ -1,0 +1,48 @@
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  cursor: pointer;
+}
+
+.baseCheckbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #484649;
+  border-radius: 2px;
+  margin-right: 12px;
+  transition-duration: 0.2s;
+}
+
+.baseCheckbox:hover {
+  opacity: 0.7;
+}
+
+.checked {
+  background: #b23386;
+  border: 2px solid #b23386;
+}
+
+.disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.error {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #b3261e;
+  font-family: "Inter", sans-serif;
+}
+
+.errorCheckbox {
+  border: 2px solid #b3261e;
+}

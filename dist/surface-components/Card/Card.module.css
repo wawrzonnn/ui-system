@@ -1,0 +1,53 @@
+.cardFullWidth {
+  border: 1px solid #000000;
+  display: inline-block;
+}
+
+.cardFullWidth:hover {
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.cardFixedWidth {
+  border: 1px solid #000000;
+  display: flex;
+  flex-direction: column;
+  max-width: 270px;
+}
+
+.cardFixedWidth:hover {
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.cardFullWidth img {
+  width: 100%;
+}
+
+.cardContent {
+  width: 100%;
+}
+
+.cardContent p,
+h1 {
+  margin: 20px 15px;
+}
+
+.buttonsWrapper {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.buttonsWrapperFixedWidth {
+  flex-wrap: wrap;
+}
+
+.buttonsWrapper button {
+  width: 100%;
+  margin: 10px;
+}
+
+.buttonsWrapper:nth-last-child(1) {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+
+.default {
+  min-width: 103px;
+  font-family: "Inter";
+  font-weight: 500;
+  padding: 10px 24px;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.default:hover .iconPlus svg path {
+  fill: #ffffff;
+}
+.primary {
+  color: black;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.primary:hover {
+  background: #b23386;
+  border: 1px solid #000000;
+  color: #ffffff;
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.secondary {
+  color: black;
+  border: 1px solid #90a8ed;
+  background: #ffffff;
+}
+
+.secondary:hover {
+  background: #90a8ed;
+  box-shadow: 4px 4px 0px #000000;
+  color: #ffffff;
+}
+
+.pressed,
+.pressed:hover {
+  box-shadow: unset;
+  filter: unset;
+
+  border-width: 3px 1px 1px 3px;
+  border-style: solid;
+  border-color: #000000;
+}
+
+.disabled,
+.disabled:hover {
+  background: #e6e1e5;
+  color: #1c1b1f;
+  opacity: 0.38;
+  box-shadow: none;
+}
+
+.isLoading,
+.isLoading:hover {
+  background: #ff90e8;
+  color: white;
+  box-shadow: none;
+  border: none;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6px;
+}
+
+.iconSpinner {
+  animation: spin 1.5s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+.default {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+  display: flex;
+}
+
+.default:hover {
+  text-decoration: underline;
+}
+
+.enabled {
+  color: #b23386;
+}
+
+.disabled,
+.disabled svg path {
+  color: #1c1b1f;
+  opacity: 0.38;
+}
+
+.disabled:hover {
+  text-decoration: none;
+}
+
+.iconSettings {
+  display: flex;
+  margin-right: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconSettings svg path {
+  fill: #b23386;
+}
