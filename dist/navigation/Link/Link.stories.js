@@ -4,18 +4,40 @@ import React from "react";
 import { Settings } from "../../assets/Icons/Settings";
 import styles from "../Link/Link.module.css";
 export default {
-    component: Link
+  component: Link,
 };
-export var Default = function (args) { return (React.createElement(Link, __assign({ to: "" }, args, { onClick: function () { return console.log("clicked"); } }), "Click Me!")); };
+export var Default = function (args) {
+  return React.createElement(
+    Link,
+    __assign({ to: "" }, args, {
+      onClick: function () {
+        return console.log("clicked");
+      },
+    }),
+    "Click Me!"
+  );
+};
 Default.args = {
-    disabled: false
+  disabled: false,
 };
-export var Icon = function (args) { return (React.createElement(Link, __assign({ to: "" }, args, { onClick: function () { return console.log("clicked"); } }),
-    React.createElement("span", { className: styles.iconSettings },
-        React.createElement(Settings, null)),
+export var Icon = function (args) {
+  return React.createElement(
+    Link,
+    __assign({ to: "" }, args, {
+      onClick: function () {
+        return console.log("clicked");
+      },
+    }),
+    React.createElement(
+      "span",
+      { className: styles.iconSettings },
+      React.createElement(Settings, null)
+    ),
     " ",
-    "Click Me!")); };
+    "Click Me!"
+  );
+};
 Icon.args = {
-    disabled: false
+  disabled: false,
 };
 //# sourceMappingURL=Link.stories.js.map
