@@ -2,7 +2,6 @@ import { Meta, StoryFn } from "@storybook/react";
 import { Button } from "./Button";
 import React from "react";
 import { Settings } from "../../assets/Icons/Settings";
-import { Spinner } from "../../assets/Icons/Spinner";
 import { Fragment } from "react";
 import styles from "../Button/Button.module.css";
 
@@ -39,7 +38,7 @@ export const Icon: StoryFn = (args) => (
           <Settings />
         </span>
       </>
-    ) }
+    )}
     Button
   </Button>
 );
