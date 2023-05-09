@@ -33,15 +33,13 @@ export const Icon: StoryFn = (args) => (
     {...args}
     onClick={() => console.log("clicked")}
   >
-   { !args.isLoading ? (<>
-      <span className={styles.icon}>
-       <Settings /> 
-      </span>
-    </> ) : ( <>
-          <span className={styles.iconSpinner}>
-            <Spinner />
-          </span>
-        </> )}
+    {!args.isLoading && (
+      <>
+        <span className={styles.icon}>
+          <Settings />
+        </span>
+      </>
+    ) }
     Button
   </Button>
 );
