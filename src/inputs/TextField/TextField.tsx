@@ -2,6 +2,7 @@ import React, { useState, PropsWithChildren } from "react";
 import styles from "./TextField.module.css";
 import { Delete } from "../../assets/Icons/Delete";
 import { Error } from "../../assets/Icons/Error";
+import { Search } from "../../assets/Icons/Search";
 import classNames from "classnames";
 const cx = classNames.bind(styles);
 
@@ -17,7 +18,7 @@ interface TextFieldProps {
   label: string;
   id: string;
   type?: string;
-  icon?: React.ReactNode;
+  icon?: boolean
 }
 
 export const TextField = ({
@@ -32,7 +33,7 @@ export const TextField = ({
   onChange,
   id,
   type = "text",
-  icon,
+  icon = false
 }: PropsWithChildren<TextFieldProps>) => {
   const [focused, setFocused] = useState(false);
 
@@ -50,8 +51,8 @@ export const TextField = ({
     [styles.inputError]: error,
     [styles.inputDisabled]: disabled,
     [styles.inputDefault]: !error || !focused,
-  });
-
+    [styles.inputIcon]: icon
+  })
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!disabled) {
       onChange(event);
@@ -75,12 +76,13 @@ export const TextField = ({
         type={type}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
+       
       />
       {icon && (
         <span
-          className={disabled ? styles.searchIconDisabled : styles.searchIcon}
+          className={styles.searchIcon}
         >
-          {icon}
+         <Search />
         </span>
       )}
       {(focused && !error && (

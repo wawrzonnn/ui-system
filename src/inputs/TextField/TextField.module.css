@@ -17,7 +17,7 @@
   transition-duration: 0.3s;
 }
 
-.inputWrapper input {
+.inputWrapper input  {
   display: block;
   min-width: 210px;
   padding: 16px 30px 16px 16px;
@@ -30,6 +30,10 @@
 
 .inputDefault {
   outline: 1px solid #484649;
+}
+
+.inputIcon input {
+  padding: 300px;
 }
 
 .labelActive {
