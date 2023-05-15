@@ -24,7 +24,5 @@ Default.args = {
   value: "",
   placeholder: "",
   hint: "",
-  icon: false
+  icon: false,
 };
-
-

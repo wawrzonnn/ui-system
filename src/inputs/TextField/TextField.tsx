@@ -18,7 +18,7 @@ interface TextFieldProps {
   label: string;
   id: string;
   type?: string;
-  icon?: boolean
+  icon?: boolean;
 }
 
 export const TextField = ({
@@ -33,7 +33,7 @@ export const TextField = ({
   onChange,
   id,
   type = "text",
-  icon = false
+  icon = false,
 }: PropsWithChildren<TextFieldProps>) => {
   const [focused, setFocused] = useState(false);
 
@@ -46,13 +46,23 @@ export const TextField = ({
     [styles.labelDisabled]: disabled,
   });
   const inputClasses = cx({
-    inputWrapper: true,
     [styles.inputFocused]: focused,
     [styles.inputError]: error,
     [styles.inputDisabled]: disabled,
     [styles.inputDefault]: !error || !focused,
-    [styles.inputIcon]: icon
+  });
+  const wrapperClasses = cx({
+    [styles.inputWrapper]: true,
+    [styles.inputWrapperIcon]: icon,
   })
+  const deleteIconClasses = cx({
+    [styles.deleteIcon]: true,
+    [styles.positionIcon]: icon,
+  });
+  const errorIconClasses = cx({
+    [styles.errorIcon]: true,
+    [styles.positionIcon]: icon,
+  });
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!disabled) {
       onChange(event);
@@ -60,7 +70,7 @@ export const TextField = ({
   };
 
   return (
-    <div className={styles.inputWrapper}>
+    <div className={wrapperClasses}>
       <label className={labelClasses} htmlFor={id}>
         {label}
       </label>
@@ -76,22 +86,19 @@ export const TextField = ({
         type={type}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-       
       />
       {icon && (
-        <span
-          className={styles.searchIcon}
-        >
-         <Search />
+        <span className={styles.searchIcon}>
+          <Search />
         </span>
       )}
       {(focused && !error && (
-        <span className={styles.deleteIcon}>
+        <span className={deleteIconClasses}>
           <Delete />
         </span>
       )) ||
         (error && !disabled && !focused && (
-          <span className={styles.errorIcon}>
+          <span className={errorIconClasses}>
             <Error />
           </span>
         ))}
