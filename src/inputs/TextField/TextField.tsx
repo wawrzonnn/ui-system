@@ -2,6 +2,7 @@ import React, { useState, PropsWithChildren } from "react";
 import styles from "./TextField.module.css";
 import { Delete } from "../../assets/Icons/Delete";
 import { Error } from "../../assets/Icons/Error";
+import { Search } from "../../assets/Icons/Search";
 import classNames from "classnames";
 const cx = classNames.bind(styles);
 
@@ -17,7 +18,7 @@ interface TextFieldProps {
   label: string;
   id: string;
   type?: string;
-  icon?: React.ReactNode;
+  icon?: boolean;
 }
 
 export const TextField = ({
@@ -32,7 +33,7 @@ export const TextField = ({
   onChange,
   id,
   type = "text",
-  icon,
+  icon = false,
 }: PropsWithChildren<TextFieldProps>) => {
   const [focused, setFocused] = useState(false);
 
@@ -45,13 +46,23 @@ export const TextField = ({
     [styles.labelDisabled]: disabled,
   });
   const inputClasses = cx({
-    inputWrapper: true,
     [styles.inputFocused]: focused,
     [styles.inputError]: error,
     [styles.inputDisabled]: disabled,
     [styles.inputDefault]: !error || !focused,
   });
-
+  const wrapperClasses = cx({
+    [styles.inputWrapper]: true,
+    [styles.inputWrapperIcon]: icon,
+  })
+  const deleteIconClasses = cx({
+    [styles.deleteIcon]: true,
+    [styles.positionIcon]: icon,
+  });
+  const errorIconClasses = cx({
+    [styles.errorIcon]: true,
+    [styles.positionIcon]: icon,
+  });
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!disabled) {
       onChange(event);
@@ -59,7 +70,7 @@ export const TextField = ({
   };
 
   return (
-    <div className={styles.inputWrapper}>
+    <div className={wrapperClasses}>
       <label className={labelClasses} htmlFor={id}>
         {label}
       </label>
@@ -77,19 +88,17 @@ export const TextField = ({
         onBlur={() => setFocused(false)}
       />
       {icon && (
-        <span
-          className={disabled ? styles.searchIconDisabled : styles.searchIcon}
-        >
-          {icon}
+        <span className={styles.searchIcon}>
+          <Search />
         </span>
       )}
       {(focused && !error && (
-        <span className={styles.deleteIcon}>
+        <span className={deleteIconClasses}>
           <Delete />
         </span>
       )) ||
         (error && !disabled && !focused && (
-          <span className={styles.errorIcon}>
+          <span className={errorIconClasses}>
             <Error />
           </span>
         ))}

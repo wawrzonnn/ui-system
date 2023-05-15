@@ -1,6 +1,5 @@
 import { TextField } from "./TextField";
 import { Meta, StoryFn } from "@storybook/react";
-import { Search } from "../../assets/Icons/Search";
 import React from "react";
 
 export default {
@@ -25,25 +24,5 @@ Default.args = {
   value: "",
   placeholder: "",
   hint: "",
-};
-
-export const Icon: StoryFn = (args) => (
-  <TextField
-    value={""}
-    placeholder={""}
-    {...args}
-    label="label"
-    name="name"
-    onChange={() => console.log("changed")}
-    id="text-field-1"
-    icon={<Search />}
-  />
-);
-
-Icon.args = {
-  disabled: false,
-  error: "",
-  value: "",
-  placeholder: "",
-  hint: "",
+  icon: false,
 };
