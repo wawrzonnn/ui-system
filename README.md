@@ -21,4 +21,3 @@ For detailed explanation on how things work, checkout the <a href="https://githu
 ### Storybook Deployment
 
 To view the deployed Storybook, click <a href="https://ui-system-oad1.vercel.app/?path=/docs/inputs-switch--docs">here.</a>
-

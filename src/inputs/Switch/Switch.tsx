@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PropsWithChildren, useState } from "react";
+import { PropsWithChildren, useState, useEffect} from "react";
 import classNames from "classnames/bind";
 
 import styles from "./Switch.module.css";
@@ -9,16 +9,21 @@ const cx = classNames.bind(styles);
 export interface SwitchProps {
   checked?: boolean;
   disabled?: boolean;
-  onChange(checked: boolean): void;
+  onChange(e: React.ChangeEvent<HTMLInputElement>): void;
   id: string;
 }
 
 export const Switch = ({
+  checked = false,
   disabled = false,
   id = "id",
-  ...props
+  onChange,
 }: PropsWithChildren<SwitchProps>) => {
-  const [checked, setChecked] = useState(false);
+  const [isChecked, setChecked] = useState(checked);
+
+  useEffect(() => {
+    setChecked(checked);
+  }, [checked]);
 
   const labelClassName = cx({
     [styles.label]: true,
@@ -34,12 +39,12 @@ export const Switch = ({
     <label className={labelClassName}>
       <input
         type="checkbox"
-        checked={checked}
+        checked={isChecked}
         disabled={disabled}
-        onChange={() => {
+        onChange={(e) => {
           if (disabled) return;
-          setChecked(!checked);
-          props.onChange(!checked);
+          setChecked(!isChecked);
+          onChange(e);
         }}
         id={id}
       />
