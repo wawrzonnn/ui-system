@@ -54,7 +54,7 @@ export const TextField = ({
   const wrapperClasses = cx({
     [styles.inputWrapper]: true,
     [styles.inputWrapperIcon]: icon,
-  })
+  });
   const deleteIconClasses = cx({
     [styles.deleteIcon]: true,
     [styles.positionIcon]: icon,

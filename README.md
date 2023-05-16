@@ -16,8 +16,9 @@ yarn build-storybook
 yarn test
 ```
 
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+For detailed explanation on how things work, checkout the <a href="https://github.com/developit/preact-cli/blob/master/README.md">[CLI Readme]</a>
 
-DEPLOYMENT:
+### Storybook Deployment
 
-ui-system-oad1-mzh6n7l6h-wawrzonnn.vercel.app
+To view the deployed Storybook, click <a href="https://ui-system-oad1.vercel.app/?path=/docs/inputs-switch--docs">here.</a>
+

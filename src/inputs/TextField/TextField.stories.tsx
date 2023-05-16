@@ -22,7 +22,7 @@ Default.args = {
   disabled: false,
   error: "",
   value: "",
-  placeholder: "",
+  placeholder: "Placeholder",
   hint: "",
   icon: false,
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import { Card, CardImage, CardContent } from "./Card";
 import { Button } from "../../inputs";
-import AvatarTemplate from "../../assets/images/AvatarTemplate.jpg";
+import CardAvatar from "../../assets/images/CardAvatar.png";
 import styles from "./Card.module.css";
 import classNames from "classnames/bind";
 
@@ -23,7 +23,7 @@ export const Default: StoryFn<CardStoryProps> = ({ fullWidth }) => {
   });
   return (
     <Card fullWidth={fullWidth}>
-      <CardImage url={AvatarTemplate} alt={"Default Avatar"} />
+      <CardImage url={CardAvatar} alt={"Default Avatar"} />
       <CardContent>
         <h1>Card name</h1>
         <p>
