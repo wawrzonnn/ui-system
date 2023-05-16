@@ -45,7 +45,7 @@ h1 {
 
 .buttonsWrapper button {
   width: 100%;
-  margin: 10px;
+  margin: 5px 10px;
 }
 
 .buttonsWrapper:nth-last-child(1) {
