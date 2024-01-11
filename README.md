@@ -22,7 +22,7 @@ Nerdux-UI is a comprehensive library of reusable React components, designed to o
 
 ## Features
 
-**· Inputs::** Button, Checkbox, Switch, TextField
+**· Inputs:** Button, Checkbox, Switch, TextField
 
 **· Data Display:** Avatar, List, Table
 
@@ -112,6 +112,5 @@ Experience eDashboard in action: [Live Demo Link](https://ui-system-oad1.vercel.
 <br><br>
 
 ## Credits
-
 
 Design provided by [Nerdbord.io](https://nerdbord.io).
