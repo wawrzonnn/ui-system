@@ -26,7 +26,7 @@ Nerdux-UI is a comprehensive library of reusable React components, designed to o
 
 **· Data Display:** Avatar, List, Table
 
-**· Navigation** Link, Pagination, Stepper, Tabs
+**· Navigation:** Link, Pagination, Stepper, Tabs
 
 **· Surface Components:** Accordion, Card
 <br><br>
