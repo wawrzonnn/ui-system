@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PropsWithChildren, useState, useEffect} from "react";
+import { PropsWithChildren, useState, useEffect } from "react";
 import classNames from "classnames/bind";
 
 import styles from "./Switch.module.css";
